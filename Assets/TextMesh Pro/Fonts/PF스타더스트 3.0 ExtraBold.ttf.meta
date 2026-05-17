@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b065f4145a07ab34f90c976d370122e7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - PF Stardust ExtraBold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 19370c35470b9054fbb25b4186cb70a5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

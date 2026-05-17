@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: 37242ed66c90bb24984c00093204374f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3179193247589397880
+    second: BearSpriteDanceBack1-removebg-preview_0
+  - first:
+      213: -3244502873376882104
+    second: BearSpriteDanceBack1-removebg-preview_1
+  - first:
+      213: 1406190684501434830
+    second: BearSpriteDanceBack1-removebg-preview_2
+  - first:
+      213: 1097878607717790863
+    second: BearSpriteDanceBack1-removebg-preview_3
+  - first:
+      213: 6737541605310995825
+    second: BearSpriteDanceBack1-removebg-preview_4
+  - first:
+      213: -3543936472634383425
+    second: BearSpriteDanceBack1-removebg-preview_5
+  - first:
+      213: 7296554084450618992
+    second: BearSpriteDanceBack1-removebg-preview_6
+  - first:
+      213: -443976323540540188
+    second: BearSpriteDanceBack1-removebg-preview_7
+  - first:
+      213: -6704297586658636397
+    second: BearSpriteDanceBack1-removebg-preview_8
+  - first:
+      213: 3264906720810375981
+    second: BearSpriteDanceBack1-removebg-preview_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 283
+        width: 90
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84203a7a3d539f2d0800000000000000
+      internalID: -3244502873376882104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 283
+        width: 90
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1eb2c2afac38310800000000000000
+      internalID: 1406190684501434830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 283
+        width: 90
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84f483e6c27c3f00800000000000000
+      internalID: 1097878607717790863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 53
+        width: 90
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3a3120e8861dec0800000000000000
+      internalID: -3543936472634383425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 53
+        width: 90
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4aea2d2eda6d9f0800000000000000
+      internalID: -443976323540540188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteDanceBack1-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 53
+        width: 90
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b10b64d574f4d20800000000000000
+      internalID: 3264906720810375981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 224b375ea30678048afbd8616245a0f2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BearSpriteDanceBack1-removebg-preview_0: -3179193247589397880
+      BearSpriteDanceBack1-removebg-preview_1: -3244502873376882104
+      BearSpriteDanceBack1-removebg-preview_2: 1406190684501434830
+      BearSpriteDanceBack1-removebg-preview_3: 1097878607717790863
+      BearSpriteDanceBack1-removebg-preview_4: 6737541605310995825
+      BearSpriteDanceBack1-removebg-preview_5: -3543936472634383425
+      BearSpriteDanceBack1-removebg-preview_6: 7296554084450618992
+      BearSpriteDanceBack1-removebg-preview_7: -443976323540540188
+      BearSpriteDanceBack1-removebg-preview_8: -6704297586658636397
+      BearSpriteDanceBack1-removebg-preview_9: 3264906720810375981
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

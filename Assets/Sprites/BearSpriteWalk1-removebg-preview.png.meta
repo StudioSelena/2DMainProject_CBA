@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 2c95ce0850eeda04a9ed1106813719d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4370950160555951614
+    second: BearSpriteWalk1-removebg-preview_0
+  - first:
+      213: -6267933716853902993
+    second: BearSpriteWalk1-removebg-preview_1
+  - first:
+      213: -3049820370524367278
+    second: BearSpriteWalk1-removebg-preview_2
+  - first:
+      213: -4021487572393329023
+    second: BearSpriteWalk1-removebg-preview_3
+  - first:
+      213: -6264609753196618703
+    second: BearSpriteWalk1-removebg-preview_4
+  - first:
+      213: 183949344826616107
+    second: BearSpriteWalk1-removebg-preview_5
+  - first:
+      213: -7964584268206599309
+    second: BearSpriteWalk1-removebg-preview_6
+  - first:
+      213: 656270006521019708
+    second: BearSpriteWalk1-removebg-preview_7
+  - first:
+      213: -8139731380812899669
+    second: BearSpriteWalk1-removebg-preview_8
+  - first:
+      213: -8686857518789077159
+    second: BearSpriteWalk1-removebg-preview_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 283
+        width: 82
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a302dbcf34753c0800000000000000
+      internalID: -4370950160555951614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 283
+        width: 83
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61ba335e73d309a0800000000000000
+      internalID: -6267933716853902993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 283
+        width: 82
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256152a188cdca5d0800000000000000
+      internalID: -3049820370524367278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 279
+        width: 83
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ef8d21c5ec038c0800000000000000
+      internalID: -4021487572393329023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 283
+        width: 82
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c944cee92af09a0800000000000000
+      internalID: -6264609753196618703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 49
+        width: 82
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b296e0b54f48d8200800000000000000
+      internalID: 183949344826616107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 53
+        width: 83
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37391e56ecc187190800000000000000
+      internalID: -7964584268206599309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 53
+        width: 82
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3dbd67081a8b1900800000000000000
+      internalID: 656270006521019708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 53
+        width: 83
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa1c8f6f6dd90f80800000000000000
+      internalID: -8139731380812899669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearSpriteWalk1-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 49
+        width: 82
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95755229c15127780800000000000000
+      internalID: -8686857518789077159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BearSpriteWalk1-removebg-preview_0: -4370950160555951614
+      BearSpriteWalk1-removebg-preview_1: -6267933716853902993
+      BearSpriteWalk1-removebg-preview_2: -3049820370524367278
+      BearSpriteWalk1-removebg-preview_3: -4021487572393329023
+      BearSpriteWalk1-removebg-preview_4: -6264609753196618703
+      BearSpriteWalk1-removebg-preview_5: 183949344826616107
+      BearSpriteWalk1-removebg-preview_6: -7964584268206599309
+      BearSpriteWalk1-removebg-preview_7: 656270006521019708
+      BearSpriteWalk1-removebg-preview_8: -8139731380812899669
+      BearSpriteWalk1-removebg-preview_9: -8686857518789077159
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

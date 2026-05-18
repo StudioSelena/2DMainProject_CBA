@@ -1,0 +1,35 @@
+[
+  {
+    "Id": "event_1",
+    "EventTitle": "돌뿌리 발견",
+    "EventDescription": "걷다가 돌뿌리를 발견했다. 어엉..?",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "ChoiceText": "돌아서 안전하게 가자.",
+    "SuccessResultText": "안전하게 돌아갔다! 안전제일이지!",
+    "FailResultText": "돌아가다 길을 잃었다..",
+    "SuccessProbability": 80
+  },
+  {
+    "Id": "event_2",
+    "EventTitle": "꿀단지 발견",
+    "EventDescription": "꿀단지를 발견했다. 침이 흐른다.",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "ChoiceText": "의심스러워.. 먹지 않는다.",
+    "SuccessResultText": "현명한 선택. 길에 있는 건 먹지 말랬어",
+    "FailResultText": "참다 못해 결국 먹었다..",
+    "SuccessProbability": 50
+  },
+  {
+    "Id": "event_3",
+    "EventTitle": "나무 발견",
+    "EventDescription": "멋진 나무를 발견했다. ",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "ChoiceText": "밑에서 낮잠을 잔다.",
+    "SuccessResultText": "그늘이 시원해서 기분이 좋다. 헷~",
+    "FailResultText": "나무가 저리 가라며 쫓아냈다… 너무해 엉엉",
+    "SuccessProbability": 80
+  }
+]

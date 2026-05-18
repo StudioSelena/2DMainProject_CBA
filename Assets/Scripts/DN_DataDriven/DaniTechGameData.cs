@@ -92,3 +92,43 @@ public class DNMonsterData : GameDataBase
     public string IconPath;
     public string PrefabPath;
 }
+
+[System.Serializable]
+public class CBAChoiceData
+{
+    public string ChoiceText;
+    public string SuccessResultText;
+    public string FailResultText;
+    public int SuccessProbability;
+}
+
+[System.Serializable]
+public class CBAEventData: GameDataBase
+{
+    public string EventTtle;
+    public string EventDescription;
+    public string BackgroundImagePath;
+    public string NPCPrefabPath;
+    public List<CBAChoiceData> Choices;
+}
+
+[System.Serializable]
+public class CBAEventDataList
+{
+    public List<CBAEventData> Events;
+}
+
+[System.Serializable]
+public class CBAEndingData : GameDataBase
+
+{
+    public string EndingTitle;
+    public string EndingDescription;
+    public bool IsSuccessEnding;
+}
+
+[System.Serializable]
+public class CBAEndingDataList
+{
+    public List<CBAEndingData> Endigs;
+}

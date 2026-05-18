@@ -22,4 +22,9 @@ public class DaniTechPlayerModel
     public Vector3 LastMapPosition;
 
     public List<DaniTechItemModel> ItemList = new List<DaniTechItemModel>();
+
+    //CBAProject
+    public int CurrentHearts = 3;
+    public int CurrentTurn = 1;
 }
+

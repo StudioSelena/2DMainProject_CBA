@@ -35,6 +35,8 @@ public class DaniTechGameDataManager : MonoBehaviour
     public Dictionary<string, DNDialogueData> DialogueDataList { get; private set; } = new Dictionary<string, DNDialogueData>();
     public Dictionary<string, DNFieldObjectData> FieldObjectDataList { get; private set; } = new Dictionary<string, DNFieldObjectData>();
     public Dictionary<string, DNMonsterData> MonsterDataList { get; private set; } = new Dictionary<string, DNMonsterData>();
+    public Dictionary<string, CBAEventData> CBAEventDataList { get; private set; } = new Dictionary<string, CBAEventData>();
+    public Dictionary<string, CBAEndingData> CBAEndingDataList { get; private set; } = new Dictionary<string, CBAEndingData>();
 
     private Dictionary<string, T> LoadData<T>(string tableName) where T : GameDataBase
     {
@@ -112,6 +114,11 @@ public class DaniTechGameDataManager : MonoBehaviour
         MonsterDataList = LoadData<DNMonsterData>("DNMonster");
     }
 
+    public void LoadCBAData()
+    {
+        CBAEventDataList = LoadData<CBAEventData>("CBAEvent");
+        CBAEndingDataList = LoadData<CBAEndingData>("CBAEnding");
+    }
 
     // [아래는 사용을 위한 부분들을 메서드 정의] =========================================================================================
     // Get과 Find이름을 꼭 구별 하자!
@@ -177,5 +184,19 @@ public class DaniTechGameDataManager : MonoBehaviour
         if (FieldObjectDataList == null || string.IsNullOrEmpty(dataId)) return null;
 
         return FieldObjectDataList.TryGetValue(dataId, out var data) ? data : null;
+    }
+
+    public CBAEventData GetCBAEventData(string id)
+    {
+        if (CBAEventDataList == null || string.IsNullOrEmpty(id)) return null;
+
+        return CBAEventDataList.TryGetValue(id, out var data) ? data : null;
+    }
+
+    public CBAEndingData GetCBAEndingData(string id)
+    {
+        if (CBAEndingDataList == null || string.IsNullOrEmpty(id)) return null;
+
+        return CBAEndingDataList.TryGetValue(id, out var data) ? data : null;
     }
 }

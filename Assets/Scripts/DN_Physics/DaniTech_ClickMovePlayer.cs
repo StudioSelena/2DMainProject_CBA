@@ -58,7 +58,7 @@ public class DaniTech_ClickMovePlayer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //메인 카메라에서 마우스 커서 위치를 향해 레이(광선)를 생성합니다.
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
            //레이를 쏴서 무언가(보통은 바닥)에 맞았다면

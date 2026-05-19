@@ -5,13 +5,21 @@ using TMPro;
 
 public class CBAAdventureUI : DaniTechUIBase
 {
+    [Header("이벤트 텍스트")]
     [SerializeField] private TextMeshProUGUI Text_EventTitle;
     [SerializeField] private TextMeshProUGUI Text_EventDescription;
+
+    [Header("선택지 버튼")]
     [SerializeField] private TextMeshProUGUI Text_Choice1;
     [SerializeField] private TextMeshProUGUI Text_Choice2;
     [SerializeField] private DaniTechUIButton Btn_Choice1;
     [SerializeField] private DaniTechUIButton Btn_Choice2;
     [SerializeField] private DaniTechUIButton Btn_Next;
+
+    [Header("상태 UI 하트")]
+    [SerializeField] private GameObject Heart1;
+    [SerializeField] private GameObject Heart2;
+    [SerializeField] private GameObject Heart3;
 
     private void OnEnable()
     {
@@ -36,6 +44,7 @@ public class CBAAdventureUI : DaniTechUIBase
         Text_EventTitle.text = "결과";
         Text_EventDescription.text = resultText;
         SetChoiceButtonsInteractable(false);
+        Btn_Next.BindOnClickButtonEvent(OnClickNextButton); // 재바인딩
         Btn_Next.gameObject.SetActive(true);
     }
 
@@ -58,5 +67,12 @@ public class CBAAdventureUI : DaniTechUIBase
     private void OnClickNextButton()
     {
         CBAGameManager.Instance.OnClickNext();
+    }
+
+    public void UpdateHeartUI(int currentHearts)
+    {
+        Heart1.SetActive(currentHearts >= 1);
+        Heart2.SetActive(currentHearts >= 2);
+        Heart3.SetActive(currentHearts >= 3);
     }
 }

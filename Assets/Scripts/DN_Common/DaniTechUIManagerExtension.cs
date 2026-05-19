@@ -180,5 +180,14 @@ public static class DaniTechUIManagerExtension
             adventureUI.ShowResultText(resultText);
         }
     }
+
+    public static void UpdateCBAHeartUI(this DaniTechUIManager uiManager, int currentHearts)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+        if (uiBase is CBAAdventureUI adventureUI)
+        {
+            adventureUI.UpdateHeartUI(currentHearts);
+        }
+    }
 }
 

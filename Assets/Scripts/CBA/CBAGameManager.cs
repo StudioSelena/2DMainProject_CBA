@@ -84,6 +84,8 @@ public class CBAGameManager : MonoBehaviour
         {
             _playerModel.CurrentHearts = 0;
         }
+
+        DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
     }
 
     private void CheckEnding()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 321097249265849197}
   - component: {fileID: 2706704272656428246}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7161327243140414506}
   - component: {fileID: 715345526804720888}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,8 +292,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uBCA4\uD2B8 \uC81C\uBAA9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: efe8da2c401c2ae4d8d71ef41ccd8d68, type: 2}
-  m_sharedMaterial: {fileID: -481995533565354211, guid: efe8da2c401c2ae4d8d71ef41ccd8d68, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2fb4799831d1e0540b3780a3597393f2, type: 2}
+  m_sharedMaterial: {fileID: 6081724630751569427, guid: 2fb4799831d1e0540b3780a3597393f2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 7761855907119595832}
   - component: {fileID: 9090074035493685191}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Buff2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 1783208879867612748}
   - component: {fileID: 6084279747045755344}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 4194609992901460933}
   - component: {fileID: 2730902505859075849}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Buff3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2722,6 +2722,9 @@ MonoBehaviour:
   Btn_Choice1: {fileID: 1054708065378526620}
   Btn_Choice2: {fileID: 2368794450141801774}
   Btn_Next: {fileID: 3346359074119191770}
+  Heart1: {fileID: 1114441581088599460}
+  Heart2: {fileID: 208630758815567755}
+  Heart3: {fileID: 6467339090403473677}
 --- !u!222 &2352101012347987768
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2772,7 +2775,7 @@ GameObject:
   - component: {fileID: 2350068148718957308}
   - component: {fileID: 585552878268953549}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Buff1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

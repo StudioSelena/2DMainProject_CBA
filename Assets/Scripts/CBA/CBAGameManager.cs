@@ -27,6 +27,8 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechUIManager.Instance.CloseCBATitleUI();
         LoadRandomEvent();
+
+        DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
     }
 
     public void LoadRandomEvent()
@@ -90,12 +92,29 @@ public class CBAGameManager : MonoBehaviour
 
     private void CheckEnding()
     {
-        if (_playerModel.CurrentHearts <=0)
+        if (_playerModel.CurrentHearts <= 0)
         {
-            Debug.Log("[CBAGameManager] 게임오버 - 실패 엔딩");
+            CBAEndingData failEnding = null;
+
+            foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
+            {
+                if (ending.IsSuccessEnding == false)
+                {
+                    failEnding = ending;
+                    break;
+                }
+            }
+
+            if (failEnding == null)
+            {
+                Debug.LogError("[CBAGameManager] 실패 엔딩 데이터가 없습니다.");
+                return;
+            }
+
+            DaniTechUIManager.Instance.CloseCBAAdventureUI();
+            DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription);
             return;
         }
-
         _playerModel.CurrentTurn += 1;
         LoadRandomEvent();
     }
@@ -109,8 +128,8 @@ public class CBAGameManager : MonoBehaviour
 
     public void RestartAdventure()
     {
+        DaniTechUIManager.Instance.CloseCBAEndingUI();
         StartAdventure();
-        Debug.Log("[CBAGameManager] 어드벤처 재시작");
     }
 
     public void OnClickNext()

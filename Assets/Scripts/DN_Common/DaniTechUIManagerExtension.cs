@@ -171,5 +171,14 @@ public static class DaniTechUIManagerExtension
     {
         uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAEndingUI);
     }
+
+    public static void ShowCBAAdventureResult(this DaniTechUIManager uiManager, string resultText)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+        if (uiBase is CBAAdventureUI adventureUI)
+        {
+            adventureUI.ShowResultText(resultText);
+        }
+    }
 }
 

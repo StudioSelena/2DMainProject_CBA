@@ -52,12 +52,22 @@ public class CBAGameManager : MonoBehaviour
         int probability = choiceIndex == 0 ? _currentEvent.Choice1SuccessProbability : _currentEvent.Choice2SuccessProbability;
         bool isSuccess = JudgeSuccessorFail(probability);
 
+        string resultText;
+        if (choiceIndex == 0)
+        {
+            resultText = isSuccess ? _currentEvent.Choice1SuccessResult : _currentEvent.Choice1FailResult;
+        }
+        else
+        {
+            resultText = isSuccess ? _currentEvent.Choice2SuccessResult : _currentEvent.Choice2FailResult;
+        }
+
         if (isSuccess == false)
         {
             ReduceHeart();
         }
 
-        CheckEnding();
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
 
     private bool JudgeSuccessorFail(int probability)
@@ -99,5 +109,10 @@ public class CBAGameManager : MonoBehaviour
     {
         StartAdventure();
         Debug.Log("[CBAGameManager] 어드벤처 재시작");
+    }
+
+    public void OnClickNext()
+    {
+        CheckEnding();
     }
 }

@@ -8,6 +8,7 @@ public class CBAEndingUI : DaniTechUIBase
     [SerializeField] private TextMeshProUGUI Text_EndingDescription;
     [SerializeField] private DaniTechUIButton Btn_ToTitle;
     [SerializeField] private DaniTechUIButton Btn_Restart;
+    [SerializeField] private TextMeshProUGUI Text_TurnCount;
 
     private void OnEnable()
     {
@@ -15,10 +16,11 @@ public class CBAEndingUI : DaniTechUIBase
         Btn_Restart.BindOnClickButtonEvent(OnClickRestartButton);
     }
 
-    public void SetEndingUI(string title, string description)
+    public void SetEndingUI(string title, string description, int turnCount)
     {
         Text_EndingTitle.text = title;
         Text_EndingDescription.text = description;
+        Text_TurnCount.text = "총 " + turnCount + "턴 생존";
     }
 
     private void OnClickToTitleButton()

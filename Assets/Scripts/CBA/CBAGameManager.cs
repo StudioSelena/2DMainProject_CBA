@@ -92,6 +92,8 @@ public class CBAGameManager : MonoBehaviour
 
     private void CheckEnding()
     {
+        _playerModel.CurrentTurn += 1;
+
         if (_playerModel.CurrentHearts <= 0)
         {
             CBAEndingData failEnding = null;
@@ -112,10 +114,10 @@ public class CBAGameManager : MonoBehaviour
             }
 
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
-            DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription);
+            DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription, _playerModel.CurrentTurn);
             return;
         }
-        _playerModel.CurrentTurn += 1;
+        
         LoadRandomEvent();
     }
 

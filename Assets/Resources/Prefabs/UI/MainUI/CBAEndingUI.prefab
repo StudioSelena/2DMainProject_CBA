@@ -459,7 +459,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 41.09497, y: 20.309814}
-  m_SizeDelta: {x: 332.929, y: 81.3741}
+  m_SizeDelta: {x: 389.7318, y: 81.3741}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4998920863643406496
 CanvasRenderer:
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD134 \uC218: "
+  m_text: "\uCD1D 1\uD134 \uC0DD\uC874"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fb4799831d1e0540b3780a3597393f2, type: 2}
   m_sharedMaterial: {fileID: 6081724630751569427, guid: 2fb4799831d1e0540b3780a3597393f2, type: 2}
@@ -833,6 +833,7 @@ MonoBehaviour:
   Text_EndingDescription: {fileID: 1856035765214605949}
   Btn_ToTitle: {fileID: 8432964032407214809}
   Btn_Restart: {fileID: 3642426070044520536}
+  Text_TurnCount: {fileID: 4870545994071673721}
 --- !u!222 &1974174431589289780
 CanvasRenderer:
   m_ObjectHideFlags: 0

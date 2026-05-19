@@ -153,7 +153,7 @@ public static class DaniTechUIManagerExtension
         uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
     }
 
-    public static void OpenCBAEndingUI(this DaniTechUIManager uiManager, string title, string description)
+    public static void OpenCBAEndingUI(this DaniTechUIManager uiManager, string title, string description, int turnCount)
     {
         var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAEndingUI);
         if (uiBase == null)
@@ -163,7 +163,7 @@ public static class DaniTechUIManagerExtension
         }
         if (uiBase is CBAEndingUI endingUI)
         {
-            endingUI.SetEndingUI(title, description);
+            endingUI.SetEndingUI(title, description, turnCount);
         }
     }
 

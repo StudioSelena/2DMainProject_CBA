@@ -189,5 +189,18 @@ public static class DaniTechUIManagerExtension
             adventureUI.UpdateHeartUI(currentHearts);
         }
     }
+
+    public static void PlayCBABearAnimation(this DaniTechUIManager uiManager, BearAnimState state)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+        if (uiBase == null)
+        {
+            return;
+        }
+        if (uiBase is CBAAdventureUI adventureUI)
+        {
+            adventureUI.PlayBearAnimation(state);
+        }
+    }
 }
 

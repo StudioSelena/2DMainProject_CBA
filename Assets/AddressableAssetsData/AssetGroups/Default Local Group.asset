@@ -65,6 +65,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc4894ef06e72cb4b8817cd430e60ecd
+    m_Address: Texture2D/Texture2D_CBALoading
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cfc5f99017f834a4aa425168d9f3048d
     m_Address: Icon/Icon_Item_Corn
     m_ReadOnly: 0

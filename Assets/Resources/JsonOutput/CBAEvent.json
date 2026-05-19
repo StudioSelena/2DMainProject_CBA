@@ -5,10 +5,14 @@
     "EventDescription": "걷다가 돌뿌리를 발견했다. 어엉..?",
     "BackgroundImagePath": null,
     "NPCPrefabPath": null,
-    "ChoiceText": "돌아서 안전하게 가자.",
-    "SuccessResultText": "안전하게 돌아갔다! 안전제일이지!",
-    "FailResultText": "돌아가다 길을 잃었다..",
-    "SuccessProbability": 80
+    "Choice1Text": "점프해서 넘는다",
+    "Choice1SuccessResult": "가뿐하게 넘었다! 역시 나야~",
+    "Choice1FailResult": "발이 걸려 넘어졌다.. 아야",
+    "Choice1SuccessProbability": 70,
+    "Choice2Text": "돌아서 안전하게 간다",
+    "Choice2SuccessResult": "안전하게 돌아갔다! 안전제일!",
+    "Choice2FailResult": "돌아가다 길을 잃었다..",
+    "Choice2SuccessProbability": 90
   },
   {
     "Id": "event_2",
@@ -16,20 +20,28 @@
     "EventDescription": "꿀단지를 발견했다. 침이 흐른다.",
     "BackgroundImagePath": null,
     "NPCPrefabPath": null,
-    "ChoiceText": "의심스러워.. 먹지 않는다.",
-    "SuccessResultText": "현명한 선택. 길에 있는 건 먹지 말랬어",
-    "FailResultText": "참다 못해 결국 먹었다..",
-    "SuccessProbability": 50
+    "Choice1Text": "냉큼 먹는다",
+    "Choice1SuccessResult": "달콤하다! 기분 최고~",
+    "Choice1FailResult": "탈이 났다.. 배야",
+    "Choice1SuccessProbability": 50,
+    "Choice2Text": "의심스러워 먹지 않는다",
+    "Choice2SuccessResult": "현명한 선택. 길에 있는 건 먹지 말랬어",
+    "Choice2FailResult": "참다 못해 결국 먹었다..",
+    "Choice2SuccessProbability": 95
   },
   {
     "Id": "event_3",
     "EventTitle": "나무 발견",
-    "EventDescription": "멋진 나무를 발견했다. ",
+    "EventDescription": "멋진 나무를 발견했다.",
     "BackgroundImagePath": null,
     "NPCPrefabPath": null,
-    "ChoiceText": "밑에서 낮잠을 잔다.",
-    "SuccessResultText": "그늘이 시원해서 기분이 좋다. 헷~",
-    "FailResultText": "나무가 저리 가라며 쫓아냈다… 너무해 엉엉",
-    "SuccessProbability": 80
+    "Choice1Text": "나무 위로 올라간다",
+    "Choice1SuccessResult": "경치가 끝내준다! 와~",
+    "Choice1FailResult": "미끄러져 떨어졌다.. 엉엉",
+    "Choice1SuccessProbability": 60,
+    "Choice2Text": "밑에서 낮잠을 잔다",
+    "Choice2SuccessResult": "그늘이 시원해서 기분이 좋다. 헷~",
+    "Choice2FailResult": "나무가 쫓아냈다… 너무해 엉엉",
+    "Choice2SuccessProbability": 80
   }
 ]

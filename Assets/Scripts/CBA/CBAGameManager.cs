@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class CBAGameManager : MonoBehaviour
@@ -26,29 +25,32 @@ public class CBAGameManager : MonoBehaviour
 
         _eventPool = new List<CBAEventData>(DaniTechGameDataManager.Instance.CBAEventDataList.Values);
 
+        DaniTechUIManager.Instance.CloseCBATitleUI();
         LoadRandomEvent();
     }
 
     public void LoadRandomEvent()
     {
+        //널체크
         if (_eventPool == null || _eventPool.Count == 0)
         {
             Debug.LogError("[CBAGameManager] 이벤트 풀이 비어 있습니다.");
             return;
         }
-        
+
+        // 풀에서 랜덤 인덱스로 이벤트 하나 뽑기
         int randomIndex = Random.Range(0, _eventPool.Count);
         _currentEvent = _eventPool[randomIndex];
+
+        DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
     }
 
     public void SelectChoice(int choiceIndex)
     {
         if (_currentEvent == null) return;
 
-        if (choiceIndex < 0 || choiceIndex >= _currentEvent.Choices.Count) return;
-
-        CBAChoiceData choice = _currentEvent.Choices[choiceIndex];
-        bool isSuccess = JudgeSuccessorFail(choice.SuccessProbability);
+        int probability = choiceIndex == 0 ? _currentEvent.Choice1SuccessProbability : _currentEvent.Choice2SuccessProbability;
+        bool isSuccess = JudgeSuccessorFail(probability);
 
         if (isSuccess == false)
         {
@@ -84,5 +86,18 @@ public class CBAGameManager : MonoBehaviour
 
         _playerModel.CurrentTurn += 1;
         LoadRandomEvent();
+    }
+
+    public void GoToTitle()
+    {
+        DaniTechUIManager.Instance.CloseCBAAdventureUI();
+        DaniTechUIManager.Instance.CloseCBAEndingUI();
+        DaniTechUIManager.Instance.OpenCBATitleUI();
+    }
+
+    public void RestartAdventure()
+    {
+        StartAdventure();
+        Debug.Log("[CBAGameManager] 어드벤처 재시작");
     }
 }

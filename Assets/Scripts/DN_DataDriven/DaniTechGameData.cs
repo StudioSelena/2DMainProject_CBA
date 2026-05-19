@@ -103,13 +103,20 @@ public class CBAChoiceData
 }
 
 [System.Serializable]
-public class CBAEventData: GameDataBase
+public class CBAEventData : GameDataBase
 {
-    public string EventTtle;
+    public string EventTitle;
     public string EventDescription;
     public string BackgroundImagePath;
     public string NPCPrefabPath;
-    public List<CBAChoiceData> Choices;
+    public string Choice1Text;
+    public string Choice1SuccessResult;
+    public string Choice1FailResult;
+    public int Choice1SuccessProbability;
+    public string Choice2Text;
+    public string Choice2SuccessResult;
+    public string Choice2FailResult;
+    public int Choice2SuccessProbability;
 }
 
 [System.Serializable]
@@ -130,5 +137,5 @@ public class CBAEndingData : GameDataBase
 [System.Serializable]
 public class CBAEndingDataList
 {
-    public List<CBAEndingData> Endigs;
+    public List<CBAEndingData> Endings;
 }

@@ -18,7 +18,10 @@ public enum DaniTechUIType
     DNInventory,
     DNLoadingUI,
     DNDialogueUI,
-    DNInfoBookUI
+    DNInfoBookUI,
+    CBATitleUI,
+    CBAAdventureUI,
+    CBAEndingUI
 }
 
 public static class DaniTechUIManagerExtension
@@ -31,6 +34,7 @@ public static class DaniTechUIManagerExtension
         // 해당 경로는 프로젝트창에서 Resources/Prefabs/UI폴더 내에 있는 RootType 폴더명과 UIType 프리팹 이름과 동일해야 한다! (ex. ContentUI/DNMyProfilePopup)
         path = $"Prefabs/UI/{uiRootType}/{uiType}";
         return path;
+
     }
 
     public static void ShowStartupUIOnGameStart(this DaniTechUIManager uiManager)
@@ -39,6 +43,7 @@ public static class DaniTechUIManagerExtension
         //uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.DNMainUI);
         // 게임 로비 UI를 여기서 오픈해주자 -> uiManager.
         // MainUI도
+        uiManager.OpenCBATitleUI();
     }
 
     public static void OpenSimplePopup(this DaniTechUIManager uiManager, string msg)
@@ -112,6 +117,59 @@ public static class DaniTechUIManagerExtension
         {
             dialogueUi.StartDialogue(startDialogueId);
         }
+    }
+
+    public static void OpenCBATitleUI(this DaniTechUIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBATitleUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseCBATitleUI(this DaniTechUIManager uiManager)
+    {
+        uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBATitleUI);
+    }
+
+    public static void OpenCBAAdventureUI(this DaniTechUIManager uiManager, string title, string description, string choice1, string choice2)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+        if (uiBase is CBAAdventureUI adventureUI)
+        {
+            adventureUI.SetEventUI(title, description, choice1, choice2);
+        }
+    }
+
+    public static void CloseCBAAdventureUI(this DaniTechUIManager uiManager)
+    {
+        uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+    }
+
+    public static void OpenCBAEndingUI(this DaniTechUIManager uiManager, string title, string description)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAEndingUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+        if (uiBase is CBAEndingUI endingUI)
+        {
+            endingUI.SetEndingUI(title, description);
+        }
+    }
+
+    public static void CloseCBAEndingUI(this DaniTechUIManager uiManager)
+    {
+        uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAEndingUI);
     }
 }
 

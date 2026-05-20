@@ -38,7 +38,7 @@ public class CBABearAnimatorController : MonoBehaviour
                 Animator_Bear.SetBool("IsIdle", true);
                 break;
             case BearAnimState.Dead:
-                Animator_Bear.SetTrigger("TriggerDead");
+                Animator_Bear.SetBool("IsDead", true);
                 break;
             case BearAnimState.Atk:
                 Animator_Bear.SetTrigger("TriggerAtk");
@@ -55,5 +55,6 @@ public class CBABearAnimatorController : MonoBehaviour
     {
         Animator_Bear.SetBool("IsJump", false);
         Animator_Bear.SetBool("IsIdle", false);
+        Animator_Bear.SetBool("IsDead", false);
     }
 }

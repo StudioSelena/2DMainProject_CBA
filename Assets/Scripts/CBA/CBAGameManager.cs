@@ -27,6 +27,7 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechUIManager.Instance.CloseCBATitleUI();
         LoadRandomEvent();
+        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
     }
@@ -45,6 +46,7 @@ public class CBAGameManager : MonoBehaviour
         _currentEvent = _eventPool[randomIndex];
 
         DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
+        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
     }
 
     public void SelectChoice(int choiceIndex)
@@ -67,9 +69,14 @@ public class CBAGameManager : MonoBehaviour
         if (isSuccess == false)
         {
             ReduceHeart();
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
+        }
+        else
+        {
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
         }
 
-        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
+            DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
 
     private bool JudgeSuccessorFail(int probability)
@@ -114,6 +121,7 @@ public class CBAGameManager : MonoBehaviour
             }
 
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
             DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription, _playerModel.CurrentTurn);
             return;
         }

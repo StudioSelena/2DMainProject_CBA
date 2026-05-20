@@ -11,7 +11,7 @@
     "Choice1SuccessProbability": 60,
     "Choice2Text": "돌아서 안전하게 가자.",
     "Choice2SuccessResult": "안전하게 돌아갔다! \\n안전제일이지!",
-    "Choice2FailResult": "돌아가다 길을 잃었다..",
+    "Choice2FailResult": "돌아가다 길을 잃었다.. \\n나 길치다곰…",
     "Choice2SuccessProbability": 80
   },
   {
@@ -25,7 +25,7 @@
     "Choice1FailResult": "혈당 스파이크… zZZzzzZZ..\\n잠에 빠져든다..",
     "Choice1SuccessProbability": 50,
     "Choice2Text": "의심스러워.. 먹지 않는다.",
-    "Choice2SuccessResult": "현명한 선택. \\n우리 엄마가 길에 있는 건 먹지 말랬어!",
+    "Choice2SuccessResult": "현명한 선택이었다곰. \\n우리 엄마가 길에 있는 건 먹지 말랬어!",
     "Choice2FailResult": "참다 못해 결국 먹었다..",
     "Choice2SuccessProbability": 50
   },
@@ -43,5 +43,50 @@
     "Choice2SuccessResult": "그늘이 시원해서 기분이 좋다. \\n헷~",
     "Choice2FailResult": "나무가 저리 가라며 쫓아냈다… \\n너무해 엉엉",
     "Choice2SuccessProbability": 80
+  },
+  {
+    "Id": "event_4",
+    "EventTitle": "수상한 버섯",
+    "EventDescription": "알록달록한 버섯을 발견했다.\\n먹음직스럽기도 하고 수상하기도 하다.",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "Choice1Text": "일단 입에 댄다. 난 곰이니까!",
+    "Choice1SuccessResult": "건강한 버섯이었다. 난 버섯을 좋아해! \\n홍홍~",
+    "Choice1FailResult": "배가 꼬르륵 거리며 복통이 느껴진다…\\n헉… 뭘 먹은거지?ㅠㅠ",
+    "Choice1SuccessProbability": 50,
+    "Choice2Text": "그 정도로 멍청하진 않다곰! 냄새만 맡는다.",
+    "Choice2SuccessResult": "흥! 냄새만 맡고 현명하게 지나쳤다.\\n나를 뭐로 보는거야?",
+    "Choice2FailResult": "재채기가 멈추지 않는다...\\n푸엑취!우엑취!!!\\n훌쩍…",
+    "Choice2SuccessProbability": 60
+  },
+  {
+    "Id": "event_5",
+    "EventTitle": "길 잃은 아기새",
+    "EventDescription": "나무 아래 아기새 한 마리가 떨어져 있다.\\n가엾게 삐약삐약 울고 있다.",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "Choice1Text": "둥지에 올려준다.",
+    "Choice1SuccessResult": "아기새가 안전하게 둥지로 돌아갔다.\\n기분이 따뜻해졌다.",
+    "Choice1FailResult": "나무에서 떨어졌다. 엉덩이가 아프다.\\n아기새가 한심하게 쳐다본다ㅠㅠ",
+    "Choice1SuccessProbability": 65,
+    "Choice2Text": "어미새가 근처에 있을거라 믿고 지나친다",
+    "Choice2SuccessResult": "마음은 무겁고 발걸음은 가볍다. (이거 맞지?)",
+    "Choice2FailResult": "죄책감에 발이 무겁다…\\n아기새야 미안해…",
+    "Choice2SuccessProbability": 90
+  },
+  {
+    "Id": "event_6",
+    "EventTitle": "돼지머리가 왜 여기에",
+    "EventDescription": "길 한복판에 잘린 돼지머리를 발견했다.\\n이게 뭐람?",
+    "BackgroundImagePath": null,
+    "NPCPrefabPath": null,
+    "Choice1Text": "입에 전재산 만 원을 물려주고 떠난다.",
+    "Choice1SuccessResult": "아무 일도 일어나지 않았다. 내 돈…",
+    "Choice1FailResult": "갑자기 돼지머리가 말을 한다:\\n이딴 코딱지를 누굴 줘?\\n도로 가져가! 투테퉤!!",
+    "Choice1SuccessProbability": 70,
+    "Choice2Text": "발로 찬다.",
+    "Choice2SuccessResult": "돼지머리가 뻥 하고 날아가 사라졌다. 스트레스가 풀렸다.",
+    "Choice2FailResult": "빗나가서 발목을 삐었다… 힘만 썼다…",
+    "Choice2SuccessProbability": 70
   }
 ]

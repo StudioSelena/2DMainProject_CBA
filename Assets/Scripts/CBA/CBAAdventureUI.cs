@@ -78,7 +78,7 @@ public class CBAAdventureUI : DaniTechUIBase
         Text_EventTitle.text = "결과";
         Text_EventDescription.text = resultText;
         SetChoiceButtonsInteractable(false);
-        Btn_Next.BindOnClickButtonEvent(OnClickNextButton); // 재바인딩
+        Btn_Next.BindOnClickButtonEvent(OnClickNextButton);
         Btn_Next.gameObject.SetActive(true);
     }
 

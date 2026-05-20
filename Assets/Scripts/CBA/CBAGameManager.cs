@@ -21,7 +21,7 @@ public class CBAGameManager : MonoBehaviour
     {
         _playerModel = new DaniTechPlayerModel();
         _playerModel.CurrentHearts = 3;
-        _playerModel.CurrentTurn = 1;
+        _playerModel.CurrentTurn = 0;
 
         _eventPool = new List<CBAEventData>(DaniTechGameDataManager.Instance.CBAEventDataList.Values);
 
@@ -34,16 +34,18 @@ public class CBAGameManager : MonoBehaviour
 
     public void LoadRandomEvent()
     {
-        //널체크
         if (_eventPool == null || _eventPool.Count == 0)
         {
             Debug.LogError("[CBAGameManager] 이벤트 풀이 비어 있습니다.");
             return;
         }
 
-        // 풀에서 랜덤 인덱스로 이벤트 하나 뽑기
+        _playerModel.CurrentTurn += 1;
+        Debug.Log($"[CBA] LoadRandomEvent 호출 / 턴: {_playerModel.CurrentTurn} / 풀 남은 수: {_eventPool.Count}");
+
         int randomIndex = Random.Range(0, _eventPool.Count);
         _currentEvent = _eventPool[randomIndex];
+        _eventPool.RemoveAt(randomIndex);
 
         DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
@@ -99,12 +101,9 @@ public class CBAGameManager : MonoBehaviour
 
     private void CheckEnding()
     {
-        _playerModel.CurrentTurn += 1;
-
         if (_playerModel.CurrentHearts <= 0)
         {
             CBAEndingData failEnding = null;
-
             foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
             {
                 if (ending.IsSuccessEnding == false)
@@ -122,10 +121,35 @@ public class CBAGameManager : MonoBehaviour
 
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+            Debug.Log($"[CBA] 엔딩 표시 / CurrentTurn: {_playerModel.CurrentTurn}");
             DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription, _playerModel.CurrentTurn);
             return;
         }
-        
+
+        if (_eventPool == null || _eventPool.Count == 0)
+        {
+            CBAEndingData successEnding = null;
+            foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
+            {
+                if (ending.IsSuccessEnding == true)
+                {
+                    successEnding = ending;
+                    break;
+                }
+            }
+
+            if (successEnding == null)
+            {
+                Debug.LogError("[CBAGameManager] 성공 엔딩 데이터가 없습니다.");
+                return;
+            }
+
+            DaniTechUIManager.Instance.CloseCBAAdventureUI();
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+            DaniTechUIManager.Instance.OpenCBAEndingUI(successEnding.EndingTitle, successEnding.EndingDescription, _playerModel.CurrentTurn);
+            return;
+        }
+
         LoadRandomEvent();
     }
 

@@ -155,6 +155,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
 
     private GameObject _bearInstance;
     private GameObject _mapInstance;
+    private GameObject _skyInstance;
 
     public void SpawnCBAWorldObjects()
     {
@@ -168,6 +169,12 @@ public class DaniTechGameObjectManager : MonoBehaviour
         if (mapPrefab != null)
         {
             _mapInstance = Instantiate(mapPrefab, new Vector3(0f, 0.3f, 0f), Quaternion.identity);
+        }
+
+        GameObject skyPrefab = Resources.Load<GameObject>("Prefabs/2D/Sky_Background");
+        if (skyPrefab != null)
+        {
+            _skyInstance = Instantiate(skyPrefab, new Vector3(-0.5f, 3.5f, 0f), Quaternion.identity);
         }
     }
 
@@ -183,6 +190,12 @@ public class DaniTechGameObjectManager : MonoBehaviour
         {
             Destroy(_mapInstance);
             _mapInstance = null;
+        }
+
+        if (_skyInstance != null)
+        {
+            Destroy(_skyInstance);
+            _skyInstance = null;
         }
     }
 

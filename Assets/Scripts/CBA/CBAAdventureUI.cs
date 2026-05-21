@@ -28,6 +28,7 @@ public class CBAAdventureUI : DaniTechUIBase
         Btn_Choice2.BindOnClickButtonEvent(OnClickChoice2Button);
         // Btn_Next 바인딩 제거
         Btn_Next.gameObject.SetActive(false);
+
     }
 
     public void SetEventUI(string title, string description, string choice1, string choice2)
@@ -78,5 +79,4 @@ public class CBAAdventureUI : DaniTechUIBase
         Heart3.SetActive(currentHearts >= 3);
     }
 
-    
 }

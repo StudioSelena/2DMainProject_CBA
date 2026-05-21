@@ -2722,6 +2722,7 @@ MonoBehaviour:
   Btn_Choice1: {fileID: 1054708065378526620}
   Btn_Choice2: {fileID: 2368794450141801774}
   Btn_Next: {fileID: 3346359074119191770}
+  Image_Sky: {fileID: 0}
   Heart1: {fileID: 1114441581088599460}
   Heart2: {fileID: 208630758815567755}
   Heart3: {fileID: 6467339090403473677}

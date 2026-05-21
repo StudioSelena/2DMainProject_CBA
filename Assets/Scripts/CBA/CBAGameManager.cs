@@ -26,6 +26,7 @@ public class CBAGameManager : MonoBehaviour
         _eventPool = new List<CBAEventData>(DaniTechGameDataManager.Instance.CBAEventDataList.Values);
 
         DaniTechUIManager.Instance.CloseCBATitleUI();
+        DaniTechGameObjectManager.Inst.SpawnCBAWorldObjects();
         LoadRandomEvent();
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
 
@@ -153,6 +154,7 @@ public class CBAGameManager : MonoBehaviour
 
     public void GoToTitle()
     {
+        DaniTechGameObjectManager.Inst.DestroyCBAWorldObjects();
         DaniTechUIManager.Instance.CloseCBAAdventureUI();
         DaniTechUIManager.Instance.CloseCBAEndingUI();
         DaniTechUIManager.Instance.OpenCBATitleUI();
@@ -160,6 +162,7 @@ public class CBAGameManager : MonoBehaviour
 
     public void RestartAdventure()
     {
+        DaniTechGameObjectManager.Inst.DestroyCBAWorldObjects();
         DaniTechUIManager.Instance.CloseCBAEndingUI();
         StartAdventure();
     }
@@ -168,4 +171,6 @@ public class CBAGameManager : MonoBehaviour
     {
         CheckEnding();
     }
+
+    
 }

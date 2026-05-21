@@ -147,5 +147,51 @@ public class DaniTechGameObjectManager : MonoBehaviour
         }
 
         return _fieldObjectContainer[fieldObjectInstanceId];
-    } 
+    }
+
+    // ====================================================
+    // [CBA] 월드 오브젝트 생성/제거
+    // ====================================================
+
+    private GameObject _bearInstance;
+    private GameObject _mapInstance;
+
+    public void SpawnCBAWorldObjects()
+    {
+        GameObject bearPrefab = Resources.Load<GameObject>("Prefabs/2D/BearCharacter");
+        if (bearPrefab != null)
+        {
+            _bearInstance = Instantiate(bearPrefab, new Vector3(-2f, 2f, 0f), Quaternion.identity);
+        }
+
+        GameObject mapPrefab = Resources.Load<GameObject>("Prefabs/2D/Map_Adventure");
+        if (mapPrefab != null)
+        {
+            _mapInstance = Instantiate(mapPrefab, new Vector3(0f, 0.3f, 0f), Quaternion.identity);
+        }
+    }
+
+    public void DestroyCBAWorldObjects()
+    {
+        if (_bearInstance != null)
+        {
+            Destroy(_bearInstance);
+            _bearInstance = null;
+        }
+
+        if (_mapInstance != null)
+        {
+            Destroy(_mapInstance);
+            _mapInstance = null;
+        }
+    }
+
+    public CBABearAnimatorController GetBearAnimatorControllerCanBeNull()
+    {
+        if (_bearInstance == null)
+        {
+            return null;
+        }
+        return _bearInstance.GetComponent<CBABearAnimatorController>();
+    }
 }

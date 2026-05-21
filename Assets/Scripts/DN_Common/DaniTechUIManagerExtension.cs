@@ -192,15 +192,12 @@ public static class DaniTechUIManagerExtension
 
     public static void PlayCBABearAnimation(this DaniTechUIManager uiManager, BearAnimState state)
     {
-        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
-        if (uiBase == null)
+        CBABearAnimatorController animController = DaniTechGameObjectManager.Inst.GetBearAnimatorControllerCanBeNull();
+        if (animController == null)
         {
             return;
         }
-        if (uiBase is CBAAdventureUI adventureUI)
-        {
-            adventureUI.PlayBearAnimation(state);
-        }
+        animController.SetState(state);
     }
 }
 

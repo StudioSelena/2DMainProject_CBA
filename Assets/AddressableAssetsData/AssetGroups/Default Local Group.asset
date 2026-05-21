@@ -60,6 +60,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a52c61e4d863eb24eb1a6cec742bd3ff
+    m_Address: Assets/ThirdParty/BayatGames/Free Platform Game Assets/Backgrounds/Background/png/1920x1080/Background/Background.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bab0dab329b3a2e45bff7ba9f9c889b4
     m_Address: Sound/Pugmia_Bgm_2
     m_ReadOnly: 0

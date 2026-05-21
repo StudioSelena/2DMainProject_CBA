@@ -1,4 +1,5 @@
 ﻿// AdventureUI의 버튼 바인딩과 이벤트 텍스트 세팅을 담당하는 UI 컴포넌트
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -21,46 +22,12 @@ public class CBAAdventureUI : DaniTechUIBase
     [SerializeField] private GameObject Heart2;
     [SerializeField] private GameObject Heart3;
 
-    private GameObject _bearInstance;
-    private CBABearAnimatorController _bearAnimController;
-
-    public void PlayBearAnimation(BearAnimState state)
-    {
-        if (_bearAnimController == null) return;
-        _bearAnimController.SetState(state);
-    }
-
     private void OnEnable()
     {
         Btn_Choice1.BindOnClickButtonEvent(OnClickChoice1Button);
         Btn_Choice2.BindOnClickButtonEvent(OnClickChoice2Button);
         // Btn_Next 바인딩 제거
         Btn_Next.gameObject.SetActive(false);
-
-        SpawnBearCharacter();
-    }
-
-    private void OnDisable()
-    {
-        if (_bearInstance != null)
-        {
-            Destroy(_bearInstance);
-            _bearInstance = null;
-            _bearAnimController = null;
-        }
-    }
-
-    private void SpawnBearCharacter()
-    {
-        GameObject prefab = Resources.Load<GameObject>("Prefabs/2D/BearCharacter");
-        if (prefab == null)
-        {
-            Debug.LogError("[CBAAdventureUI] BearCharacter 프리팹을 찾을 수 없습니다.");
-            return;
-        }
-
-        _bearInstance = Instantiate(prefab, new Vector3(-2f, 2f, 0f), Quaternion.identity);
-        _bearAnimController = _bearInstance.GetComponent<CBABearAnimatorController>();
     }
 
     public void SetEventUI(string title, string description, string choice1, string choice2)

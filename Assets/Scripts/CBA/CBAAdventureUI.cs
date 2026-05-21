@@ -59,7 +59,7 @@ public class CBAAdventureUI : DaniTechUIBase
             return;
         }
 
-        _bearInstance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        _bearInstance = Instantiate(prefab, new Vector3(-2f, 2f, 0f), Quaternion.identity);
         _bearAnimController = _bearInstance.GetComponent<CBABearAnimatorController>();
     }
 

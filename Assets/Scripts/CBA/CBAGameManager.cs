@@ -36,7 +36,6 @@ public class CBAGameManager : MonoBehaviour
     {
         if (_eventPool == null || _eventPool.Count == 0)
         {
-            Debug.LogError("[CBAGameManager] 이벤트 풀이 비어 있습니다.");
             return;
         }
 
@@ -115,7 +114,6 @@ public class CBAGameManager : MonoBehaviour
 
             if (failEnding == null)
             {
-                Debug.LogError("[CBAGameManager] 실패 엔딩 데이터가 없습니다.");
                 return;
             }
 

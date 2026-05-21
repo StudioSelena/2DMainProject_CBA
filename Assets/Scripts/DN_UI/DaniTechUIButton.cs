@@ -54,7 +54,6 @@ public class DaniTechUIButton : MonoBehaviour
     public void BindOnClickButtonEvent(Action onClickCallback)
     {
         if(Button_Base == null) return;
-
         Button_Base.onClick.AddListener(new UnityEngine.Events.UnityAction(onClickCallback));
 
     }

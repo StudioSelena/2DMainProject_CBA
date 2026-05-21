@@ -34,7 +34,7 @@ public class CBAAdventureUI : DaniTechUIBase
     {
         Btn_Choice1.BindOnClickButtonEvent(OnClickChoice1Button);
         Btn_Choice2.BindOnClickButtonEvent(OnClickChoice2Button);
-        Btn_Next.BindOnClickButtonEvent(OnClickNextButton);
+        // Btn_Next 바인딩 제거
         Btn_Next.gameObject.SetActive(false);
 
         SpawnBearCharacter();
@@ -78,6 +78,7 @@ public class CBAAdventureUI : DaniTechUIBase
         Text_EventTitle.text = "결과";
         Text_EventDescription.text = resultText;
         SetChoiceButtonsInteractable(false);
+
         Btn_Next.BindOnClickButtonEvent(OnClickNextButton);
         Btn_Next.gameObject.SetActive(true);
     }

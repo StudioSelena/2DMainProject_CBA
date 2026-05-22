@@ -201,7 +201,19 @@ public class DaniTechGameObjectManager : MonoBehaviour
             return;
         }
 
-        _npcInstance = Instantiate(npcPrefab, new Vector3(2f, 2f, 0f), Quaternion.identity);
+        CBANPCData npcData = npcPrefab.GetComponent<CBANPCData>();
+
+        Vector3 spawnPosition;
+        if (npcData != null)
+        {
+            spawnPosition = new Vector3(npcData.SpawnOffset.x, npcData.SpawnOffset.y, 0f);
+        }
+        else
+        {
+            spawnPosition = new Vector3(2f, 2f, 0f);
+        }
+
+        _npcInstance = Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
     }
 
     public void DestroyCBAWorldObjects()

@@ -49,6 +49,7 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
+        DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
     }
 

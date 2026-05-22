@@ -156,6 +156,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
     private GameObject _bearInstance;
     private GameObject _mapInstance;
     private GameObject _skyInstance;
+    private GameObject _npcInstance;
 
     public void SpawnCBAWorldObjects()
     {
@@ -176,6 +177,31 @@ public class DaniTechGameObjectManager : MonoBehaviour
         {
             _skyInstance = Instantiate(skyPrefab, new Vector3(-0.2f, 3.5f, 0f), Quaternion.identity);
         }
+
+        
+    }
+
+    public void UpdateCBANPCInstance(string npcPrefabPath)
+    {
+        if (_npcInstance != null)
+        {
+            Destroy(_npcInstance);
+            _npcInstance = null;
+        }
+
+        if (string.IsNullOrEmpty(npcPrefabPath))
+        {
+            return;
+        }
+
+        GameObject npcPrefab = Resources.Load<GameObject>(npcPrefabPath);
+        if (npcPrefab == null)
+        {
+            Debug.LogWarning($"[CBA] NPC 프리팹을 찾을 수 없습니다: {npcPrefabPath}");
+            return;
+        }
+
+        _npcInstance = Instantiate(npcPrefab, new Vector3(2f, 2f, 0f), Quaternion.identity);
     }
 
     public void DestroyCBAWorldObjects()
@@ -196,6 +222,12 @@ public class DaniTechGameObjectManager : MonoBehaviour
         {
             Destroy(_skyInstance);
             _skyInstance = null;
+        }
+
+        if (_npcInstance != null)
+        {
+            Destroy(_npcInstance);
+            _npcInstance = null;
         }
     }
 

@@ -204,5 +204,10 @@ public static class DaniTechUIManagerExtension
     {
         DaniTechGameObjectManager.Inst.UpdateCBABackgroundSprite(backgroundImageKey);
     }
+
+    public static void UpdateCBANPC(this DaniTechUIManager uiManager, string npcPrefabPath)
+    {
+        DaniTechGameObjectManager.Inst.UpdateCBANPCInstance(npcPrefabPath);
+    }
 }
 

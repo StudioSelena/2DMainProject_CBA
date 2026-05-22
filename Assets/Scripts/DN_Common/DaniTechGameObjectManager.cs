@@ -174,7 +174,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
         GameObject skyPrefab = Resources.Load<GameObject>("Prefabs/2D/Sky_Background");
         if (skyPrefab != null)
         {
-            _skyInstance = Instantiate(skyPrefab, new Vector3(-0.5f, 3.5f, 0f), Quaternion.identity);
+            _skyInstance = Instantiate(skyPrefab, new Vector3(-0.2f, 3.5f, 0f), Quaternion.identity);
         }
     }
 
@@ -197,6 +197,31 @@ public class DaniTechGameObjectManager : MonoBehaviour
             Destroy(_skyInstance);
             _skyInstance = null;
         }
+    }
+
+    public void UpdateCBABackgroundSprite(string backgroundImageKey)
+    {
+        if (_skyInstance == null)
+        {
+            Debug.LogWarning("[CBA] Sky 인스턴스가 없습니다.");
+            return;
+        }
+
+        Sprite sprite = Resources.Load<Sprite>("Backgrounds/" + backgroundImageKey);
+        if (sprite == null)
+        {
+            Debug.LogWarning($"[CBA] 배경 스프라이트를 찾을 수 없습니다: Backgrounds/{backgroundImageKey}");
+            return;
+        }
+
+        SpriteRenderer spriteRenderer = _skyInstance.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning("[CBA] Sky_Background에 SpriteRenderer가 없습니다.");
+            return;
+        }
+
+        spriteRenderer.sprite = sprite;
     }
 
     public CBABearAnimatorController GetBearAnimatorControllerCanBeNull()

@@ -107,7 +107,7 @@ public class CBAEventData : GameDataBase
 {
     public string EventTitle;
     public string EventDescription;
-    public string BackgroundImagePath;
+    public string BackgroundImageKey;
     public string NPCPrefabPath;
     public string Choice1Text;
     public string Choice1SuccessResult;

@@ -22,6 +22,7 @@ public class CBAAdventureUI : DaniTechUIBase
     [SerializeField] private GameObject Heart2;
     [SerializeField] private GameObject Heart3;
 
+
     private void OnEnable()
     {
         Btn_Choice1.BindOnClickButtonEvent(OnClickChoice1Button);

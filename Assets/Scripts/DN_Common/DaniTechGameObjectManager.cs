@@ -170,7 +170,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
         {
             _mapInstance = Instantiate(mapPrefab, new Vector3(0f, 0.3f, 0f), Quaternion.identity);
         }
-
+        
         GameObject skyPrefab = Resources.Load<GameObject>("Prefabs/2D/Sky_Background");
         if (skyPrefab != null)
         {

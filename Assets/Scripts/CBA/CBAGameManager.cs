@@ -17,6 +17,9 @@ public class CBAGameManager : MonoBehaviour
         Instance = this;
     }
 
+
+    
+
     public void StartAdventure()
     {
         _playerModel = new DaniTechPlayerModel();

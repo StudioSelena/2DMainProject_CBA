@@ -40,6 +40,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58e17b27db62ad544947a64511a458ca
+    m_Address: Sounds/SFX_Select_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f7d96777f1610448865de5cb9e4badd
+    m_Address: Sounds/BGM_Adv_BearOnTheTrain
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65e2f41a6055c264c85b5e83f24b56af
+    m_Address: Sounds/BGM_Title_PixelOverworldRun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 667b719d1d688874a8f6a8ad59d98106
     m_Address: Icon/Icon_Item_Box_1
     m_ReadOnly: 0
@@ -55,13 +70,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f79cd0e8dd3e77479f32a09e6d1c0f8
+    m_Address: Sounds/BGM_Lose_GameOverDrift
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 988485599ab6ecb4db508e35e6b5086a
     m_Address: Sound/Pugmia_Bgm_Housing_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a24c6d67e96870b4298b6a085aa8a957
+    m_Address: Sounds/BGM_Bee_PixelSyrup_Battle_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a52c61e4d863eb24eb1a6cec742bd3ff
     m_Address: Assets/ThirdParty/BayatGames/Free Platform Game Assets/Backgrounds/Background/png/1920x1080/Background/Background.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab13a02ad8c3fa1479ba42e00ec44dce
+    m_Address: Sounds/BGM_Win_LevelClearJingle
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

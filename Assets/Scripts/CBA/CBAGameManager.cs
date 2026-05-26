@@ -17,8 +17,11 @@ public class CBAGameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Title_PixelOverworldRun", 0.1f);
+    }
 
-    
 
     public void StartAdventure()
     {
@@ -34,6 +37,8 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+
+        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearOnTheTrain", 0.1f);
     }
 
     public void LoadRandomEvent()
@@ -83,7 +88,8 @@ public class CBAGameManager : MonoBehaviour
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
         }
 
-            DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
+        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.5f);
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
 
     private bool JudgeSuccessorFail(int probability)
@@ -127,6 +133,7 @@ public class CBAGameManager : MonoBehaviour
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
             Debug.Log($"[CBA] 엔딩 표시 / CurrentTurn: {_playerModel.CurrentTurn}");
             DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription, _playerModel.CurrentTurn);
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Lose_GameOverDrift", 0.1f);
             return;
         }
 
@@ -151,6 +158,7 @@ public class CBAGameManager : MonoBehaviour
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
             DaniTechUIManager.Instance.OpenCBAEndingUI(successEnding.EndingTitle, successEnding.EndingDescription, _playerModel.CurrentTurn);
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Win_LevelClearJingle", 0.1f);
             return;
         }
 
@@ -159,10 +167,12 @@ public class CBAGameManager : MonoBehaviour
 
     public void GoToTitle()
     {
+        DaniTechSoundManager.Inst.StopBGM();
         DaniTechGameObjectManager.Inst.DestroyCBAWorldObjects();
         DaniTechUIManager.Instance.CloseCBAAdventureUI();
         DaniTechUIManager.Instance.CloseCBAEndingUI();
         DaniTechUIManager.Instance.OpenCBATitleUI();
+        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Title_PixelOverworldRun", 0.1f);
     }
 
     public void RestartAdventure()

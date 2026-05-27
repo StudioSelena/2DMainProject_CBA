@@ -37,6 +37,7 @@ public class DaniTechGameDataManager : MonoBehaviour
     public Dictionary<string, DNMonsterData> MonsterDataList { get; private set; } = new Dictionary<string, DNMonsterData>();
     public Dictionary<string, CBAEventData> CBAEventDataList { get; private set; } = new Dictionary<string, CBAEventData>();
     public Dictionary<string, CBAEndingData> CBAEndingDataList { get; private set; } = new Dictionary<string, CBAEndingData>();
+    public Dictionary<string, CBASpecialEventStepData> CBASpecialEventDataList { get; private set; } = new Dictionary<string, CBASpecialEventStepData>();
 
     private Dictionary<string, T> LoadData<T>(string tableName) where T : GameDataBase
     {
@@ -65,8 +66,10 @@ public class DaniTechGameDataManager : MonoBehaviour
             if (wrapper != null && wrapper.items != null)
             {
                 Debug.Log($"{typeof(T).Name} 데이터를 {wrapper.items.Count}개 로드했습니다.");
-                // ToDictionary를 사용하려면 각 클래스(T)에 Id 필드가 있어야 합니다.
-                return wrapper.items.ToDictionary(item => item.Id.ToString());
+                // ToDictionary를 사용하려면 각 클래스(T)에 Id 필드가 있어야 합니다. //null중복행 키중복 해결 수정
+                return wrapper.items
+                     .Where(item => string.IsNullOrEmpty(item.Id) == false)
+                     .ToDictionary(item => item.Id);
             }
         }
         catch (Exception ex)
@@ -118,6 +121,7 @@ public class DaniTechGameDataManager : MonoBehaviour
     {
         CBAEventDataList = LoadData<CBAEventData>("CBAEvent");
         CBAEndingDataList = LoadData<CBAEndingData>("CBAEnding");
+        CBASpecialEventDataList = LoadData<CBASpecialEventStepData>("CBASpecialEvent");
     }
 
     // [아래는 사용을 위한 부분들을 메서드 정의] =========================================================================================
@@ -198,5 +202,12 @@ public class DaniTechGameDataManager : MonoBehaviour
         if (CBAEndingDataList == null || string.IsNullOrEmpty(id)) return null;
 
         return CBAEndingDataList.TryGetValue(id, out var data) ? data : null;
+    }
+
+    public CBASpecialEventStepData GetCBASpecialEventStepData(string id)
+    {
+        if (CBASpecialEventDataList == null || string.IsNullOrEmpty(id)) return null;
+
+        return CBASpecialEventDataList.TryGetValue(id, out var data) ? data : null;
     }
 }

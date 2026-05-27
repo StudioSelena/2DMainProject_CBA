@@ -6,6 +6,12 @@ using TMPro;
 
 public class CBAAdventureUI : DaniTechUIBase
 {
+    [Header("말풍선 다이얼로그")]
+    [SerializeField] private GameObject Panel_BearDialogue;
+    [SerializeField] private TextMeshProUGUI Text_BearDialogue;
+    [SerializeField] private GameObject Panel_NPCDialogue;
+    [SerializeField] private TextMeshProUGUI Text_NPCDialogue;
+
     [Header("이벤트 텍스트")]
     [SerializeField] private TextMeshProUGUI Text_EventTitle;
     [SerializeField] private TextMeshProUGUI Text_EventDescription;
@@ -40,6 +46,7 @@ public class CBAAdventureUI : DaniTechUIBase
         Text_Choice2.text = choice2;
         SetChoiceButtonsInteractable(true);
         Btn_Next.gameObject.SetActive(false);
+        SetDialoguePanelsActive(false, string.Empty, false, string.Empty);
     }
 
     public void ShowResultText(string resultText)
@@ -60,12 +67,26 @@ public class CBAAdventureUI : DaniTechUIBase
 
     private void OnClickChoice1Button()
     {
-        CBAGameManager.Instance.SelectChoice(0);
+        if (CBAGameManager.Instance.IsInSpecialEvent)
+        {
+            CBAGameManager.Instance.SelectChoiceInSpecialEvent(0);
+        }
+        else
+        {
+            CBAGameManager.Instance.SelectChoice(0);
+        }
     }
 
     private void OnClickChoice2Button()
     {
-        CBAGameManager.Instance.SelectChoice(1);
+        if (CBAGameManager.Instance.IsInSpecialEvent)
+        {
+            CBAGameManager.Instance.SelectChoiceInSpecialEvent(1);
+        }
+        else
+        {
+            CBAGameManager.Instance.SelectChoice(1);
+        }
     }
 
     private void OnClickNextButton()
@@ -80,4 +101,37 @@ public class CBAAdventureUI : DaniTechUIBase
         Heart3.SetActive(currentHearts >= 3);
     }
 
+    public void SetSpecialEventUI(string bearDialogue, string npcDialogue, string choice1, string choice2)
+    {
+        Text_EventTitle.text = string.Empty;
+        Text_EventDescription.text = string.Empty;
+        Text_Choice1.text = choice1;
+        Text_Choice2.text = choice2;
+        SetChoiceButtonsInteractable(true);
+        Btn_Next.gameObject.SetActive(false);
+
+        bool showBear = string.IsNullOrEmpty(bearDialogue) == false;
+        bool showNPC = string.IsNullOrEmpty(npcDialogue) == false;
+        SetDialoguePanelsActive(showBear, bearDialogue, showNPC, npcDialogue);
+    }
+
+    private void SetDialoguePanelsActive(bool showBear, string bearText, bool showNPC, string npcText)
+    {
+        if (Panel_BearDialogue != null)
+        {
+            Panel_BearDialogue.SetActive(showBear);
+        }
+        if (Text_BearDialogue != null)
+        {
+            Text_BearDialogue.text = bearText;
+        }
+        if (Panel_NPCDialogue != null)
+        {
+            Panel_NPCDialogue.SetActive(showNPC);
+        }
+        if (Text_NPCDialogue != null)
+        {
+            Text_NPCDialogue.text = npcText;
+        }
+    }
 }

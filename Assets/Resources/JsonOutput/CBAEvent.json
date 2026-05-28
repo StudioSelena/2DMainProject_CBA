@@ -24,7 +24,7 @@
     "NPCPrefabPath": "Prefabs/2D/NPC_CBA/NPC_HoneyPot",
     "Choice1Text": "맛있게 먹는다. 냠!",
     "Choice1SuccessResult": "기운이 솟는다!! 우어!!!",
-    "Choice1HeartsChange": 0,
+    "Choice1HeartsChange": 1,
     "Choice1FailResult": "혈당 스파이크… zZZzzzZZ..\\n잠에 빠져든다..",
     "Choice1SuccessProbability": 55,
     "Choice2Text": "의심스러워.. 먹지 않는다.",

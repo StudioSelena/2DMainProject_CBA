@@ -308,6 +308,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechSoundManager.Inst.PlayBGM(GetSpecialEventBGM(_currentSpecialEventStep.GetSpecialEventType()), 0.1f);
         DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(_currentSpecialEventStep.BearDialogue, _currentSpecialEventStep.NPCDialogue, _currentSpecialEventStep.Choice1Text, _currentSpecialEventStep.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
+        DaniTechUIManager.Instance.UpdateCBANPC(GetSpecialEventNPCPath(_currentSpecialEventStep.GetSpecialEventType()));
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
     }
 
@@ -324,6 +325,18 @@ public class CBAGameManager : MonoBehaviour
         }
     }
 
+    private string GetSpecialEventNPCPath(SpecialEventType eventType)
+    {
+        switch (eventType)
+        {
+            case SpecialEventType.Bee:
+                return "Prefabs/2D/NPC_CBA/NPC_Bee";
+            case SpecialEventType.Gomsuni:
+                return "Prefabs/2D/NPC_CBA/NPC_Gomsuni";
+            default:
+                return string.Empty;
+        }
+    }
     public void SelectChoiceInSpecialEvent(int choiceIndex)
     {
         

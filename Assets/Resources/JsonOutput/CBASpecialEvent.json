@@ -4,7 +4,7 @@
     "SpecialEventType": "Bee",
     "StepIndex": 1,
     "BearDialogue": "으악! 벌끔이다!!",
-    "NPCDialogue": "네놈의 꿀을 내놔라!",
+    "NPCDialogue": "야 뚱곰! 꿀 내놔! 촤핫!\\n넌 살 좀 빼야돼~",
     "BackgroundImageKey": "BG_Forest",
     "Choice1Text": "도망친다",
     "Choice1SuccessNextStepId": "bee_step2_a",

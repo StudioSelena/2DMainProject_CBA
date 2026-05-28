@@ -32,6 +32,8 @@ public class CBAGameManager : MonoBehaviour
         _playerModel = new DaniTechPlayerModel();
         _playerModel.CurrentHearts = 3;
         _playerModel.CurrentTurn = 0;
+        _currentSpecialEventStep = null;
+        _hatEventSuccess = false;
 
         //모자이벤트는 일반이벤트랜덤풀에서 제외
         _eventPool = new List<CBAEventData>();
@@ -97,6 +99,8 @@ public class CBAGameManager : MonoBehaviour
         if (_currentEvent == null) return;
 
         int probability = choiceIndex == 0 ? _currentEvent.Choice1SuccessProbability : _currentEvent.Choice2SuccessProbability;
+
+
         bool isSuccess = JudgeSuccessorFail(probability);
 
         string resultText;
@@ -263,6 +267,7 @@ public class CBAGameManager : MonoBehaviour
 
     public void SelectChoiceInSpecialEvent(int choiceIndex)
     {
+        
         if (_currentSpecialEventStep == null) return;
 
         int probability = choiceIndex == 0 ? _currentSpecialEventStep.Choice1SuccessProbability : _currentSpecialEventStep.Choice2SuccessProbability;
@@ -301,7 +306,8 @@ public class CBAGameManager : MonoBehaviour
             // 곰순이 동행 처리 — 추후 구현
         }
 
-        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.5f);
+        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
+        _currentSpecialEventStep = null;
         DaniTechUIManager.Instance.ShowCBAAdventureResult(string.Empty);
     }
 }

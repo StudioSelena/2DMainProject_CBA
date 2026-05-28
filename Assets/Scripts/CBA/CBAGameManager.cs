@@ -249,7 +249,7 @@ public class CBAGameManager : MonoBehaviour
         }
 
         DaniTechSoundManager.Inst.PlayBGM(GetSpecialEventBGM(_currentSpecialEventStep.GetSpecialEventType()), 0.1f);
-        DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentSpecialEventStep.BearDialogue, _currentSpecialEventStep.NPCDialogue, _currentSpecialEventStep.Choice1Text, _currentSpecialEventStep.Choice2Text);
+        DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(_currentSpecialEventStep.BearDialogue, _currentSpecialEventStep.NPCDialogue, _currentSpecialEventStep.Choice1Text, _currentSpecialEventStep.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
     }

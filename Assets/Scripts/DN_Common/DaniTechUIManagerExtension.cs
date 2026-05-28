@@ -148,6 +148,20 @@ public static class DaniTechUIManagerExtension
         }
     }
 
+    public static void OpenCBAAdventureUIForSpecialEvent(this DaniTechUIManager uiManager, string bearDialogue, string npcDialogue, string choice1, string choice2)
+    {
+        var uiBase = uiManager.OpenUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+        if (uiBase is CBAAdventureUI adventureUI)
+        {
+            adventureUI.SetSpecialEventUI(bearDialogue, npcDialogue, choice1, choice2);
+        }
+    }
+
     public static void CloseCBAAdventureUI(this DaniTechUIManager uiManager)
     {
         uiManager.CloseUI(DaniTechUIRootType.MainUI, DaniTechUIType.CBAAdventureUI);

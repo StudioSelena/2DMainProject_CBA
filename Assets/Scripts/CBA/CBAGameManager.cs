@@ -84,6 +84,11 @@ public class CBAGameManager : MonoBehaviour
             LoadSpecialEvent(startStepId);
             return;
         }
+        if (_playerModel.CurrentTurn == 17)
+        {
+            LoadTrueEnding();
+            return;
+        }
 
         Debug.Log($"[CBA] LoadRandomEvent 호출 / 턴: {_playerModel.CurrentTurn} / 풀 남은 수: {_eventPool.Count}");
 
@@ -264,6 +269,30 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+    }
+
+    private void LoadTrueEnding()
+    {
+        CBAEndingData trueEnding = null;
+        foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
+        {
+            if (ending.IsSuccessEnding == true)
+            {
+                trueEnding = ending;
+                break;
+            }
+        }
+
+        if (trueEnding == null)
+        {
+            Debug.LogError("[CBAGameManager] 진엔딩 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        DaniTechUIManager.Instance.CloseCBAAdventureUI();
+        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+        DaniTechUIManager.Instance.OpenCBAEndingUI(trueEnding.EndingTitle, trueEnding.EndingDescription, _playerModel.CurrentTurn);
+        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Win_LevelClearJingle", 0.1f);
     }
 
     private void LoadSpecialEvent(string stepId)

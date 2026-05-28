@@ -252,7 +252,7 @@
     "Choice2SuccessNextStepId": null,
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 0,
-    "ResultType": "Companion"
+    "ResultType": "Success"
   },
   {
     "Id": "gomsuni_step4_fail",

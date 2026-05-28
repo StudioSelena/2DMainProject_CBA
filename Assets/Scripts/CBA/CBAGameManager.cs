@@ -128,12 +128,20 @@ public class CBAGameManager : MonoBehaviour
         }
         else
         {
+            int heartsChange = choiceIndex == 0 ? _currentEvent.Choice1HeartsChange : _currentEvent.Choice2HeartsChange;
+            if (heartsChange > 0)
+            {
+                RecoverHeart(heartsChange);
+            }
+            
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
         }
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.5f);
         DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
+
+    
 
     private bool JudgeSuccessorFail(int probability)
     {
@@ -148,6 +156,18 @@ public class CBAGameManager : MonoBehaviour
         if (_playerModel.CurrentHearts < 0)
         {
             _playerModel.CurrentHearts = 0;
+        }
+
+        DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+    }
+
+    private void RecoverHeart(int amount)
+    {
+        _playerModel.CurrentHearts += amount;
+
+        if(_playerModel.CurrentHearts > 3)
+        {
+            _playerModel.CurrentHearts = 3;
         }
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);

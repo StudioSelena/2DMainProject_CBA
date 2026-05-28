@@ -117,6 +117,8 @@ public class CBAEventData : GameDataBase
     public string Choice2SuccessResult;
     public string Choice2FailResult;
     public int Choice2SuccessProbability;
+    public int Choice1HeartsChange;
+    public int Choice2HeartsChange;
 }
 
 [System.Serializable]

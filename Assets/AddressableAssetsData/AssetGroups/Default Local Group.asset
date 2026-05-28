@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e04a92e49235c142880e400d06b7292
+    m_Address: Sounds/BGM_Gomsuni_LanternVillage_Romantic_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37d307305e9528a48a2e0ffdadfe5760
     m_Address: Texture2D/Texture2D_Loading_2
     m_ReadOnly: 0
@@ -90,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa7155a5ac1a55b4f8a5f2e40936f3bf
+    m_Address: Sounds/BGM_Adv_BearSwanWaltz_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ab13a02ad8c3fa1479ba42e00ec44dce
     m_Address: Sounds/BGM_Win_LevelClearJingle
     m_ReadOnly: 0
@@ -117,6 +127,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa10f0e6a7fa0194585cc5d634b0a558
     m_Address: 2DPrefab/DropItem_Gold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe97412087fbc40418805f83f8359417
+    m_Address: Sounds/BGM_Gomsuni_Adv_SailorBearParade_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

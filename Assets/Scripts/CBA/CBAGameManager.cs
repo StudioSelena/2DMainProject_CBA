@@ -8,8 +8,10 @@ public class CBAGameManager : MonoBehaviour
     private DaniTechPlayerModel _playerModel;
     private List<CBAEventData> _eventPool = new List<CBAEventData>();
     private bool _hatEventSuccess = false;
+    private bool _isGomsuniCompanion = false;
     private CBASpecialEventStepData _currentSpecialEventStep;
     private CBAEventData _currentEvent;
+
 
     public DaniTechPlayerModel PlayerModel { get { return _playerModel; } }
     public CBAEventData CurrentEvent { get { return _currentEvent; } }
@@ -34,6 +36,7 @@ public class CBAGameManager : MonoBehaviour
         _playerModel.CurrentTurn = 0;
         _currentSpecialEventStep = null;
         _hatEventSuccess = false;
+        _isGomsuniCompanion = false;
 
         //모자이벤트는 일반이벤트랜덤풀에서 제외
         _eventPool = new List<CBAEventData>();
@@ -265,6 +268,8 @@ public class CBAGameManager : MonoBehaviour
         {
             case SpecialEventType.Bee:
                 return "Sounds/BGM_Bee_PixelSyrup_Battle_1";
+            case SpecialEventType.Gomsuni:
+                return "Sounds/BGM_Gomsuni_LanternVillage_Romantic_1";
             default:
                 return "Sounds/BGM_Adv_BearOnTheTrain";
         }
@@ -304,16 +309,26 @@ public class CBAGameManager : MonoBehaviour
         else if (resultType == SpecialEventResultType.Success)
         {
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
-        }
-        else if (resultType == SpecialEventResultType.Companion)
-        {
-            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
-            // 곰순이 동행 처리 — 추후 구현
+
+            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+            {
+                _isGomsuniCompanion = true;
+            }
         }
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
+
         _currentSpecialEventStep = null;
-        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
+
+        if (_isGomsuniCompanion)
+        {
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Gomsuni_Adv_SailorBearParade_1", 0.1f);
+        }
+        else
+        {
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
+        }
+
         DaniTechUIManager.Instance.ShowCBAAdventureResult(string.Empty);
     }
 }

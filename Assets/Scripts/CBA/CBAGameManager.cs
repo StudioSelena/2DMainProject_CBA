@@ -103,6 +103,11 @@ public class CBAGameManager : MonoBehaviour
 
         bool isSuccess = JudgeSuccessorFail(probability);
 
+        if (_currentEvent.Id == "event_hat" && isSuccess)
+        {
+            _hatEventSuccess = true;
+        }
+
         string resultText;
         if (choiceIndex == 0)
         {
@@ -308,6 +313,7 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
         _currentSpecialEventStep = null;
+        DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
         DaniTechUIManager.Instance.ShowCBAAdventureResult(string.Empty);
     }
 }

@@ -33,7 +33,16 @@ public class CBAGameManager : MonoBehaviour
         _playerModel.CurrentHearts = 3;
         _playerModel.CurrentTurn = 0;
 
-        _eventPool = new List<CBAEventData>(DaniTechGameDataManager.Instance.CBAEventDataList.Values);
+        //모자이벤트는 일반이벤트랜덤풀에서 제외
+        _eventPool = new List<CBAEventData>();
+        foreach (CBAEventData eventData in DaniTechGameDataManager.Instance.CBAEventDataList.Values)
+        {
+            if (eventData.Id == "event_hat")
+            {
+                continue;
+            }
+            _eventPool.Add(eventData);
+        }
 
         DaniTechUIManager.Instance.CloseCBATitleUI();
         DaniTechGameObjectManager.Inst.SpawnCBAWorldObjects();

@@ -27,6 +27,10 @@ public class CBAAdventureUI : DaniTechUIBase
     [SerializeField] private GameObject Heart2;
     [SerializeField] private GameObject Heart3;
 
+    [Header("상태 UI 턴")]
+    [SerializeField] private TextMeshProUGUI Text_Turn;
+
+
     private void OnEnable()
     {
         Btn_Choice1.BindOnClickButtonEvent(OnClickChoice1Button);
@@ -123,5 +127,10 @@ public class CBAAdventureUI : DaniTechUIBase
         Heart1.SetActive(currentHearts >= 1);
         Heart2.SetActive(currentHearts >= 2);
         Heart3.SetActive(currentHearts >= 3);
+    }
+
+    public void UpdateTurnUI(int currentTurn)
+    {
+        Text_Turn.text = $"{currentTurn} / 17턴";
     }
 }

@@ -55,6 +55,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
 
         DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearOnTheTrain", 0.1f);
     }
@@ -100,6 +101,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     public void SelectChoice(int choiceIndex)
@@ -164,6 +166,7 @@ public class CBAGameManager : MonoBehaviour
         }
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private void RecoverHeart(int amount)
@@ -176,6 +179,7 @@ public class CBAGameManager : MonoBehaviour
         }
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private void CheckEnding()
@@ -269,6 +273,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private void LoadTrueEnding()
@@ -310,6 +315,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(GetSpecialEventNPCPath(_currentSpecialEventStep.GetSpecialEventType()));
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private string GetSpecialEventBGM(SpecialEventType eventType)

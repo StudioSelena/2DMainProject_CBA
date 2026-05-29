@@ -7,7 +7,9 @@ public enum NPCAnimState
     Idle,
     Shy,
     WalkCompanion,
-    Win
+    Win,
+    Nope,
+    Smile
 }
 
 public class CBANPCAnimationController : MonoBehaviour
@@ -41,6 +43,12 @@ public class CBANPCAnimationController : MonoBehaviour
             case NPCAnimState.Win:
                 Animator_NPC.SetBool("IsWin", true);
                 break;
+            case NPCAnimState.Nope:
+                Animator_NPC.SetBool("IsNope", true);
+                break;
+            case NPCAnimState.Smile:
+                Animator_NPC.SetBool("IsSmile", true);
+                break;
         }
     }
 
@@ -50,5 +58,7 @@ public class CBANPCAnimationController : MonoBehaviour
         Animator_NPC.SetBool("IsShy", false);
         Animator_NPC.SetBool("IsWalkCompanion", false);
         Animator_NPC.SetBool("IsWin", false);
+        Animator_NPC.SetBool("IsNope", false);
+        Animator_NPC.SetBool("IsSmile", false);
     }
 }

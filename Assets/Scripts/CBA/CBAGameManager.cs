@@ -365,8 +365,17 @@ public class CBAGameManager : MonoBehaviour
 
         if (resultType == SpecialEventResultType.Fail)
         {
-            ReduceHeart();
-            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
+            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+            {
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Nope);
+            }
+            else
+            {
+                ReduceHeart();
+                DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Win);
+
+            }
         }
         else if (resultType == SpecialEventResultType.Success)
         {
@@ -375,7 +384,7 @@ public class CBAGameManager : MonoBehaviour
             if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
             {
                 _isGomsuniCompanion = true;
-                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Shy);
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Smile);
             }
         }
 

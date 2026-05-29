@@ -339,7 +339,7 @@ public class CBAGameManager : MonoBehaviour
     }
     public void SelectChoiceInSpecialEvent(int choiceIndex)
     {
-        
+
         if (_currentSpecialEventStep == null) return;
 
         int probability = choiceIndex == 0 ? _currentSpecialEventStep.Choice1SuccessProbability : _currentSpecialEventStep.Choice2SuccessProbability;
@@ -390,6 +390,7 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
 
+        string resultText = _currentSpecialEventStep.ResultText;
         _currentSpecialEventStep = null;
 
         if (_isGomsuniCompanion)
@@ -401,6 +402,6 @@ public class CBAGameManager : MonoBehaviour
             DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
         }
 
-        DaniTechUIManager.Instance.ShowCBAAdventureResult(string.Empty);
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
 }

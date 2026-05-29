@@ -1,4 +1,4 @@
-// 특별 이벤트(벌끔이/곰순이) 데이터 구조 및 결과 타입 정의
+﻿// 특별 이벤트(벌끔이/곰순이) 데이터 구조 및 결과 타입 정의
 
 using System.Collections.Generic;
 
@@ -52,6 +52,7 @@ public class CBASpecialEventStepData : GameDataBase
     // 결과 타입 — 비어있으면 None(중간 단계), 최종 단계에서만 값 존재
     // "Success" / "Fail" / "Companion" 중 하나
     public string ResultType;
+    public string ResultText;
 
     // ResultType 문자열을 enum으로 변환하는 헬퍼
     public SpecialEventResultType GetResultType()

@@ -276,4 +276,13 @@ public class DaniTechGameObjectManager : MonoBehaviour
         }
         return _bearInstance.GetComponent<CBABearAnimatorController>();
     }
+
+    public CBANPCAnimationController GetNPCAnimationControllerCanBeNull()
+    {
+        if (_npcInstance == null)
+        {
+            return null;
+        }
+        return _npcInstance.GetComponent<CBANPCAnimationController>();
+    }
 }

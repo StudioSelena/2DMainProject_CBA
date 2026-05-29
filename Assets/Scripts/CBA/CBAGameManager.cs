@@ -142,7 +142,7 @@ public class CBAGameManager : MonoBehaviour
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
         }
 
-        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.5f);
+        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
         DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
 
@@ -375,6 +375,7 @@ public class CBAGameManager : MonoBehaviour
             if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
             {
                 _isGomsuniCompanion = true;
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Shy);
             }
         }
 

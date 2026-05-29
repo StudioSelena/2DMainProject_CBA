@@ -214,6 +214,16 @@ public static class DaniTechUIManagerExtension
         animController.SetState(state);
     }
 
+    public static void PlayCBANPCAnimation(this DaniTechUIManager uiManager, NPCAnimState state)
+    {
+        CBANPCAnimationController animController = DaniTechGameObjectManager.Inst.GetNPCAnimationControllerCanBeNull();
+        if (animController == null)
+        {
+            return;
+        }
+        animController.SetState(state);
+    }
+
     public static void UpdateCBABackground(this DaniTechUIManager uiManager, string backgroundImageKey)
     {
         DaniTechGameObjectManager.Inst.UpdateCBABackgroundSprite(backgroundImageKey);

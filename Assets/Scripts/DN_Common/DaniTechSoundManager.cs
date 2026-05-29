@@ -21,7 +21,7 @@ public class DaniTechSoundManager : MonoBehaviour
     }
 
     // 효과음 재생 (겹쳐서 재생 가능)
-    public void PlaySFX(string soundDataId, float volume = 1f)
+    public void PlaySFX(string soundDataId, float volume = 0.8f)
     {
 
         DaniTechGameUtil.LoadAndPlayAudioClip(AudioSourcePlayer, soundDataId).Forget();

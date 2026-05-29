@@ -20,7 +20,7 @@ public class CBATitleUI : DaniTechUIBase
 
     private void OnClickStartAdventureButton()
     {
-        CBAGameManager.Instance.StartAdventure();
+        DaniTechUIManager.Instance.OpenCBATutorialPopup();
     }
 
     private void OnClickShopButton()

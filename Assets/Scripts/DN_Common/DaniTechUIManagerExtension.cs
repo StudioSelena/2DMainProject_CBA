@@ -21,7 +21,8 @@ public enum DaniTechUIType
     DNInfoBookUI,
     CBATitleUI,
     CBAAdventureUI,
-    CBAEndingUI
+    CBAEndingUI,
+    CBATutorialPopup
 }
 
 public static class DaniTechUIManagerExtension
@@ -241,6 +242,11 @@ public static class DaniTechUIManagerExtension
     public static void UpdateCBANPC(this DaniTechUIManager uiManager, string npcPrefabPath)
     {
         DaniTechGameObjectManager.Inst.UpdateCBANPCInstance(npcPrefabPath);
+    }
+
+    public static void OpenCBATutorialPopup(this DaniTechUIManager uiManager)
+    {
+        uiManager.OpenPopupUI(DaniTechUIType.CBATutorialPopup);
     }
 }
 

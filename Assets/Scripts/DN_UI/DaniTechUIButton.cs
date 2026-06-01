@@ -81,4 +81,10 @@ public class DaniTechUIButton : MonoBehaviour
             Image_Select.gameObject.SetActive(!currentActive);
         }
     }
+
+    public void SetInteractable(bool interactable)
+    {
+        if (Button_Base == null) return;
+        Button_Base.interactable = interactable;
+    }
 }

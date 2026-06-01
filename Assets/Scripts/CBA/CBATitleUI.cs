@@ -10,6 +10,8 @@ public class CBATitleUI : DaniTechUIBase
     [SerializeField] private DaniTechUIButton Btn_Inventory;
     [SerializeField] private DaniTechUIButton Btn_EndingCollection;
 
+    private const string TUTORIAL_SEEN_KEY = "CBA_TutorialSeen";
+
     private void OnEnable()
     {
         Btn_StartAdventure.BindOnClickButtonEvent(OnClickStartAdventureButton);
@@ -20,9 +22,15 @@ public class CBATitleUI : DaniTechUIBase
 
     private void OnClickStartAdventureButton()
     {
+        if (PlayerPrefs.GetInt(TUTORIAL_SEEN_KEY, 0) == 1)
+        {
+            CBAGameManager.Instance.StartAdventure();
+            return;
+        }
+
+        Btn_StartAdventure.SetInteractable(false);
         DaniTechUIManager.Instance.OpenCBATutorialPopup();
     }
-
     private void OnClickShopButton()
     {
         // Milestone 3

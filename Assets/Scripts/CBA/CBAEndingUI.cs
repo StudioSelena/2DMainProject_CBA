@@ -9,6 +9,9 @@ public class CBAEndingUI : DaniTechUIBase
     [SerializeField] private DaniTechUIButton Btn_ToTitle;
     [SerializeField] private DaniTechUIButton Btn_Restart;
     [SerializeField] private TextMeshProUGUI Text_TurnCount;
+    [SerializeField] private GameObject EndingAnimArea;
+
+    private const string DANCE_UNLOCKED_KEY = "CBA_DanceUnlocked";
 
     private void OnEnable()
     {
@@ -29,6 +32,35 @@ public class CBAEndingUI : DaniTechUIBase
         {
             string causeText = beeResult + " " + gomsuniResult + " " + lastFailResult;
             Text_EndingDescription.text = description + "\n" + causeText;
+        }
+
+        PlayEndingAnimation(isSuccessEnding);
+    }
+
+    private void PlayEndingAnimation(bool isSuccessEnding)
+    {
+        if (EndingAnimArea == null)
+        {
+            Debug.LogError("[CBAEndingUI] EndingAnimArea가 null입니다.");
+            return;
+        }
+
+        CBABearAnimatorController bearAnim = EndingAnimArea.GetComponentInChildren<CBABearAnimatorController>(true);
+        if (bearAnim == null)
+        {
+            Debug.LogError("[CBAEndingUI] CBABearAnimatorController를 찾지 못했습니다.");
+            return;
+        }
+
+        Debug.Log($"[CBAEndingUI] PlayEndingAnimation 호출 / isSuccessEnding: {isSuccessEnding}");
+
+        if (isSuccessEnding)
+        {
+            bearAnim.SetState(BearAnimState.DanceBack);
+        }
+        else
+        {
+            bearAnim.SetState(BearAnimState.Dead);
         }
     }
 

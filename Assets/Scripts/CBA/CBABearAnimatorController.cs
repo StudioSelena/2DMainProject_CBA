@@ -44,7 +44,7 @@ public class CBABearAnimatorController : MonoBehaviour
                 Animator_Bear.SetTrigger("TriggerAtk");
                 break;
             case BearAnimState.DanceBack:
-                // Milestone 3, 엔딩 해금 시 구현
+                Animator_Bear.SetBool("IsDanceBack", true);
                 break;
             default:
                 break;
@@ -56,5 +56,6 @@ public class CBABearAnimatorController : MonoBehaviour
         Animator_Bear.SetBool("IsJump", false);
         Animator_Bear.SetBool("IsIdle", false);
         Animator_Bear.SetBool("IsDead", false);
+        Animator_Bear.SetBool("IsDanceBack", false);
     }
 }

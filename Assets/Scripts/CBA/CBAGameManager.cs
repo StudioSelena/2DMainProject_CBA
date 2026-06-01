@@ -61,7 +61,15 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.CloseCBATitleUI();
         DaniTechGameObjectManager.Inst.SpawnCBAWorldObjects();
         LoadRandomEvent();
-        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+
+        if (PlayerPrefs.GetInt("CBA_DanceUnlocked", 0) == 1)
+        {
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.DanceBack);
+        }
+        else
+        {
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+        }
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
@@ -109,7 +117,9 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
-        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+
+        DaniTechUIManager.Instance.PlayCBABearAnimation(GetDefaultBearAnimState());
+
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
@@ -313,12 +323,16 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.OpenCBAAdventureUI(_currentEvent.EventTitle, _currentEvent.EventDescription, _currentEvent.Choice1Text, _currentEvent.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentEvent.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(_currentEvent.NPCPrefabPath);
-        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+
+        DaniTechUIManager.Instance.PlayCBABearAnimation(GetDefaultBearAnimState());
+
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private void LoadTrueEnding()
     {
+        PlayerPrefs.SetInt("CBA_DanceUnlocked", 1);
+        PlayerPrefs.Save();
         _isSuccessEnding = true;
         CBAEndingData trueEnding = null;
         foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
@@ -381,7 +395,9 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(_currentSpecialEventStep.BearDialogue, _currentSpecialEventStep.NPCDialogue, _currentSpecialEventStep.Choice1Text, _currentSpecialEventStep.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(GetSpecialEventNPCPath(_currentSpecialEventStep.GetSpecialEventType()));
-        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
+
+        DaniTechUIManager.Instance.PlayCBABearAnimation(GetDefaultBearAnimState());
+
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
@@ -396,6 +412,15 @@ public class CBAGameManager : MonoBehaviour
             default:
                 return "Sounds/BGM_Adv_BearOnTheTrain";
         }
+    }
+
+    private BearAnimState GetDefaultBearAnimState()
+    {
+        if (PlayerPrefs.GetInt("CBA_DanceUnlocked", 0) == 1)
+        {
+            return BearAnimState.DanceBack;
+        }
+        return BearAnimState.Walk;
     }
 
     private string GetSpecialEventNPCPath(SpecialEventType eventType)

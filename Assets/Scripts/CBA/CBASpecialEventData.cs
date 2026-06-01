@@ -53,6 +53,7 @@ public class CBASpecialEventStepData : GameDataBase
     // "Success" / "Fail" / "Companion" 중 하나
     public string ResultType;
     public string ResultText;
+    public string DeathResult;
 
     // ResultType 문자열을 enum으로 변환하는 헬퍼
     public SpecialEventResultType GetResultType()

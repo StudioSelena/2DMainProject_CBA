@@ -16,11 +16,20 @@ public class CBAEndingUI : DaniTechUIBase
         Btn_Restart.BindOnClickButtonEvent(OnClickRestartButton);
     }
 
-    public void SetEndingUI(string title, string description, int turnCount)
+    public void SetEndingUI(string title, string description, int turnCount, string beeResult, string gomsuniResult, string lastFailResult, bool isSuccessEnding)
     {
         Text_EndingTitle.text = title;
-        Text_EndingDescription.text = description;
-        Text_TurnCount.text = "총 " + turnCount + "턴 생존";
+        Text_TurnCount.text = "총 " + (turnCount -1) + "턴 생존";
+
+        if (isSuccessEnding)
+        {
+            Text_EndingDescription.text = description;
+        }
+        else
+        {
+            string causeText = beeResult + " " + gomsuniResult + " " + lastFailResult;
+            Text_EndingDescription.text = description + "\n" + causeText;
+        }
     }
 
     private void OnClickToTitleButton()

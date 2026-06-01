@@ -119,6 +119,7 @@ public class CBAEventData : GameDataBase
     public int Choice2SuccessProbability;
     public int Choice1HeartsChange;
     public int Choice2HeartsChange;
+    public string DeathResult;
 }
 
 [System.Serializable]
@@ -134,6 +135,10 @@ public class CBAEndingData : GameDataBase
     public string EndingTitle;
     public string EndingDescription;
     public bool IsSuccessEnding;
+    public string BeeResultSuccess;
+    public string BeeResultFail;
+    public string GomsuniResultSuccess;
+    public string GomsuniResultFail;
 }
 
 [System.Serializable]

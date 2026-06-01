@@ -2,13 +2,21 @@
   {
     "Id": "ending_success",
     "EndingTitle": "마법의 샘 도달!!",
-    "EndingDescription": "드디어 부리부리 춤을 찾아냈다! 궁극의 엉덩이 춤을 해금했다!\\n엉뚱곰의 대모험은 계속된다.",
-    "IsSuccessEnding": true
+    "EndingDescription": "드디어 부리부리 춤을 찾아냈다! 궁극의 엉덩이 춤을 해금했다!\\n엉뚱곰의 대모험은 계속된다.\\n",
+    "IsSuccessEnding": true,
+    "BeeResultSuccess": "벌끔이를 물리쳤고..",
+    "BeeResultFail": "벌끔이에게 꿀을 빼앗겼지만..",
+    "GomsuniResultSuccess": " 곰순씨와 함께 모험을 완주했다..",
+    "GomsuniResultFail": " 곰순씨 없이 혼자 해냈다."
   },
   {
     "Id": "ending_fail",
     "EndingTitle": "모험 실패...",
-    "EndingDescription": "엉뚱곰은 집으로 돌아갔다.",
-    "IsSuccessEnding": false
+    "EndingDescription": "엉뚱곰은 집으로 돌아갔다...\\n",
+    "IsSuccessEnding": false,
+    "BeeResultSuccess": "벌끔이는 물리쳤지만..",
+    "BeeResultFail": "벌끔이에게 꿀을 빼앗겼고..",
+    "GomsuniResultSuccess": "곰순씨의 마음을 얻었지만..",
+    "GomsuniResultFail": "곰순씨에게도 차였고…"
   }
 ]

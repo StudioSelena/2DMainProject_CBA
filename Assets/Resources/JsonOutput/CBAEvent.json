@@ -14,7 +14,8 @@
     "Choice2SuccessResult": "안전하게 돌아갔다! \\n안전제일이지!",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "돌아가다 길을 잃었다.. \\n나 길치다곰…",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "돌뿌리에 걸려 넘어졌다…"
   },
   {
     "Id": "event_2",
@@ -31,7 +32,8 @@
     "Choice2SuccessResult": "현명한 선택이었다곰. \\n우리 엄마가 길에 있는 건 먹지 말랬어!",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "참다 못해 결국 먹었다..",
-    "Choice2SuccessProbability": 45
+    "Choice2SuccessProbability": 45,
+    "DeathResult": "혈당 스파이크로 잠에 빠졌다…"
   },
   {
     "Id": "event_3",
@@ -48,7 +50,8 @@
     "Choice2SuccessResult": "그늘이 시원해서 기분이 좋다. \\n헷~",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "나무가 저리 가라며 쫓아냈다… \\n너무해 엉엉",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "나무에게 쫓겨났다…"
   },
   {
     "Id": "event_4",
@@ -65,7 +68,8 @@
     "Choice2SuccessResult": "흥! 냄새만 맡고 현명하게 지나쳤다.\\n나를 뭐로 보는거야?",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "재채기가 멈추지 않는다...\\n푸엑취!우엑취!!!\\n훌쩍…",
-    "Choice2SuccessProbability": 55
+    "Choice2SuccessProbability": 55,
+    "DeathResult": "독버섯을 먹고 쓰러졌다…"
   },
   {
     "Id": "event_5",
@@ -82,7 +86,8 @@
     "Choice2SuccessResult": "마음은 무겁고 발걸음은 가볍다. (이거 맞지?)",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "죄책감에 발이 무겁다…\\n아기새야 미안해…",
-    "Choice2SuccessProbability": 75
+    "Choice2SuccessProbability": 75,
+    "DeathResult": "나무에서 떨어져 다쳤다…"
   },
   {
     "Id": "event_6",
@@ -99,7 +104,8 @@
     "Choice2SuccessResult": "돼지머리가 뻥 하고 날아가 사라졌다. 스트레스가 풀렸다.",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "빗나가서 발목을 삐었다… 힘만 썼다…",
-    "Choice2SuccessProbability": 60
+    "Choice2SuccessProbability": 60,
+    "DeathResult": "돼지머리에게 당했다…"
   },
   {
     "Id": "event_7",
@@ -116,7 +122,8 @@
     "Choice2SuccessResult": "뭔가 좋은 게 있었을까…? 아쉽다.",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "-",
-    "Choice2SuccessProbability": 100
+    "Choice2SuccessProbability": 100,
+    "DeathResult": "허리를 삐끗해 쓰러졌다…"
   },
   {
     "Id": "event_8",
@@ -133,7 +140,8 @@
     "Choice2SuccessResult": "배가 고프지만 오늘도 양심을 지켰다...",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "곰이 그런 게 어딨어?! 돌아가서 다시 먹어버렸다. 이거지!",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "독이 오른 감자를 먹었다…"
   },
   {
     "Id": "event_9",
@@ -150,7 +158,8 @@
     "Choice2SuccessResult": "시간이 걸렸지만 무사히 건넜다.",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "발이 빠져서 지쳐버렸다…",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "모래밭에 빠졌다…"
   },
   {
     "Id": "event_10",
@@ -167,7 +176,8 @@
     "Choice2SuccessResult": "아무도 없다. 다시 길을 떠났다.",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "주인이 몽둥이를 들고 뛰쳐나왔다!!!꺄악!!!!!",
-    "Choice2SuccessProbability": 55
+    "Choice2SuccessProbability": 55,
+    "DeathResult": "개한테 쫓겼다…"
   },
   {
     "Id": "event_11",
@@ -184,7 +194,8 @@
     "Choice2SuccessResult": "별 거 없겠지, 하고 지나쳤다. ",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "-",
-    "Choice2SuccessProbability": 100
+    "Choice2SuccessProbability": 100,
+    "DeathResult": "책의 저주에 걸렸다…"
   },
   {
     "Id": "event_12",
@@ -201,7 +212,8 @@
     "Choice2SuccessResult": "뒤에서 이상하게 웃는다. 이상한 사람~",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "남자가 갑자기 뒤에서 덮쳤다. 싸움 끝에 지쳤다… 그냥 사줄걸…",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "수상한 남자한테 당했다…"
   },
   {
     "Id": "event_13",
@@ -218,58 +230,62 @@
     "Choice2SuccessResult": "여우가 먼저 도망갔다. 쳇~",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "여우가 왁!! 하고 달려들었다. 우엉 ㅠㅠ",
-    "Choice2SuccessProbability": 70
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "여우가 물었다…"
   },
   {
     "Id": "event_14",
     "EventTitle": "커다란 공룡알",
-    "EventDescription": "ㅇㄹㅇㄹㅇㄹㅇㄹ",
+    "EventDescription": "알록달록한 공룡알이 길 한가운데 나타났다.",
     "BackgroundImageKey": "Background",
     "NPCPrefabPath": "Prefabs/2D/NPC_CBA/NPC_DinoEgg",
-    "Choice1Text": "ㅇㄹㅇㄹ",
-    "Choice1SuccessResult": "ㅇㄹㅇㄹ",
-    "Choice1HeartsChange": 1,
-    "Choice1FailResult": "ㅇㄹㅇㄹㅇㄹ",
-    "Choice1SuccessProbability": 65,
-    "Choice2Text": "ㅇㄹㅇㄹ",
-    "Choice2SuccessResult": "ㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹ",
+    "Choice1Text": "건드려볼까..?",
+    "Choice1SuccessResult": "안에 뭔가 꿈틀거린다!! 신기해~",
+    "Choice1HeartsChange": 0,
+    "Choice1FailResult": "갑자기 껍질이 깨지기 시작했다!! 너무 놀라서 넘어졌다!",
+    "Choice1SuccessProbability": 60,
+    "Choice2Text": "저쪽으로 굴려보낸다…",
+    "Choice2SuccessResult": "멀리 굴러갔다. 데구르르… 잘 가….",
     "Choice2HeartsChange": 0,
-    "Choice2FailResult": "ㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹ",
-    "Choice2SuccessProbability": 80
+    "Choice2FailResult": "잘 가",
+    "Choice2SuccessProbability": 100,
+    "DeathResult": "공룡알에 당했다…"
   },
   {
     "Id": "event_15",
     "EventTitle": "독개구리",
-    "EventDescription": "독독",
+    "EventDescription": "개구리: 독독!\\n\\n         …… 어떡하지??",
     "BackgroundImageKey": "Background",
     "NPCPrefabPath": "Prefabs/2D/NPC_CBA/NPC_Frog",
-    "Choice1Text": "ㄴㅊㄴㅊㄴ",
-    "Choice1SuccessResult": "ㄴㅊㄴㅊ",
-    "Choice1HeartsChange": 1,
-    "Choice1FailResult": "ㄴㅊㄴㅊㄴㅊㄴ",
-    "Choice1SuccessProbability": 75,
-    "Choice2Text": "ㄴㅊㄴㅊ",
-    "Choice2SuccessResult": "ㄴㅊㄴㅊㄴㅊ",
-    "Choice2HeartsChange": 1,
-    "Choice2FailResult": "ㄴㅊㄴㅊㄴㅊ",
-    "Choice2SuccessProbability": 65
+    "Choice1Text": "비켜달라고 부탁해본다.",
+    "Choice1SuccessResult": "독독씨가 비켜주었다. 역시 예의가 있어야 해!",
+    "Choice1HeartsChange": 0,
+    "Choice1FailResult": "독독씨가 독침을 쐈다ㅠ 죄송해요 ㅠㅠ",
+    "Choice1SuccessProbability": 65,
+    "Choice2Text": "점프해서 넘어가본다…",
+    "Choice2SuccessResult": "훌쩍! 멋지게 넘어갔다.",
+    "Choice2HeartsChange": 0,
+    "Choice2FailResult": "점프하다 독독씨를 짚어버렸다… 앗 따끔해 ㅠ",
+    "Choice2SuccessProbability": 55,
+    "DeathResult": "독독씨한테 쏘였다…"
   },
   {
     "Id": "event_16",
     "EventTitle": "모닥불",
-    "EventDescription": "ㅇㄹㄴㅇ",
+    "EventDescription": "모닥불이 타오르고 있다. 따뜻해보인다.",
     "BackgroundImageKey": "NewBackground2048x1536",
     "NPCPrefabPath": "Prefabs/2D/NPC_CBA/NPC_Fireplace",
-    "Choice1Text": "ㄴㅇㄹ",
-    "Choice1SuccessResult": "ㄴㅇㄹ",
+    "Choice1Text": "옆에 앉아 쉰다.",
+    "Choice1SuccessResult": "따뜻해지고 기운이 난다. 체력+1",
     "Choice1HeartsChange": 1,
-    "Choice1FailResult": "ㄴㅇㄹㄴㅇㄹ",
+    "Choice1FailResult": "꼬리에 불이 붙었다!!! 헉!!",
     "Choice1SuccessProbability": 80,
-    "Choice2Text": "ㄴㅇㄹㄴ",
-    "Choice2SuccessResult": "ㄴㅇㄹㄴㅇㄹ",
-    "Choice2HeartsChange": 1,
-    "Choice2FailResult": "ㄴㄴㄷㄹㅇ",
-    "Choice2SuccessProbability": 55
+    "Choice2Text": "산불조심! 불을 끈다.",
+    "Choice2SuccessResult": "불이 잘 꺼졌다. 안전제일!",
+    "Choice2HeartsChange": 0,
+    "Choice2FailResult": "털에 불이 붙었다!! 꺄악!!ㅠㅠ",
+    "Choice2SuccessProbability": 70,
+    "DeathResult": "불이 붙었다…."
   },
   {
     "Id": "event_17",
@@ -277,16 +293,17 @@
     "EventDescription": "어떤 정신머리 나간 야구선수가 지 목숨과도 같은 야구빠따를 놓고 갔어?!",
     "BackgroundImageKey": "NewBackground2048x1536",
     "NPCPrefabPath": "Prefabs/2D/NPC_CBA/NPC_BaseballBat",
-    "Choice1Text": "sdse",
-    "Choice1SuccessResult": "ㄴㄷㄹㄴㅇㄹ",
-    "Choice1HeartsChange": 0,
-    "Choice1FailResult": "ㄴㄷㄹㄴㅇㄹ",
+    "Choice1Text": "휘둘러본다",
+    "Choice1SuccessResult": "완벽한 스윙! 안타홈런!! (1점추가)",
+    "Choice1HeartsChange": 1,
+    "Choice1FailResult": "빠따를 놓쳐 날아갔다. 어딘가에서 비명소리가 들린다..",
     "Choice1SuccessProbability": 60,
-    "Choice2Text": "ㄴㅇㄹㄷ",
-    "Choice2SuccessResult": "ㄴㅇㄹㄷㄴ",
-    "Choice2HeartsChange": 1,
-    "Choice2FailResult": "ㄴㄷㄹㄴㅇㄹ",
-    "Choice2SuccessProbability": 60
+    "Choice2Text": "들고 간다. 무기 획득!",
+    "Choice2SuccessResult": "든든하다. 이제 뭐든 두렵지 않다곰! ",
+    "Choice2HeartsChange": 0,
+    "Choice2FailResult": "헉 너무 무겁다… 체력이 오히려 빠졌다…",
+    "Choice2SuccessProbability": 55,
+    "DeathResult": "야구빠따를 집는 게 아니었다… 이놈의 야구…"
   },
   {
     "Id": null,
@@ -303,7 +320,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -320,7 +338,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -337,7 +356,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -354,7 +374,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -371,7 +392,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -388,7 +410,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -405,7 +428,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -422,7 +446,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -439,7 +464,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -456,7 +482,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -473,7 +500,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -490,7 +518,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -507,7 +536,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -524,7 +554,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": null,
@@ -541,7 +572,8 @@
     "Choice2SuccessResult": null,
     "Choice2HeartsChange": null,
     "Choice2FailResult": null,
-    "Choice2SuccessProbability": null
+    "Choice2SuccessProbability": null,
+    "DeathResult": null
   },
   {
     "Id": "event_hat",
@@ -558,6 +590,7 @@
     "Choice2SuccessResult": "꽤 잘 어울린다! 기분이 좋아졌다.",
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "모자 주인이 달려와서 모자를 받아갔다. 민망하다.",
-    "Choice2SuccessProbability": 80
+    "Choice2SuccessProbability": 80,
+    "DeathResult": "모자따위 무시했어야 했다…"
   }
 ]

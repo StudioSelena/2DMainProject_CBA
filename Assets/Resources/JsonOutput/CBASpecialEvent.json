@@ -15,7 +15,8 @@
     "Choice2FailNextStepId": "bee_step2_b",
     "Choice2SuccessProbability": 40,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "bee_step2_a",
@@ -33,7 +34,8 @@
     "Choice2FailNextStepId": "bee_step3_fail",
     "Choice2SuccessProbability": 50,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "bee_step2_b",
@@ -51,7 +53,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 100,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "bee_step2_c",
@@ -69,7 +72,8 @@
     "Choice2FailNextStepId": "bee_step3_fail",
     "Choice2SuccessProbability": 50,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "bee_step3_success",
@@ -87,7 +91,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 0,
     "ResultType": "Success",
-    "ResultText": "벌끔이를 물리쳤따!!! 흥, 저 자식은 얼굴만 반반해서 약해빠졌다니까~"
+    "ResultText": "벌끔이를 물리쳤따!!! 흥, 저 자식은 얼굴만 반반해서 약해빠졌다니까~",
+    "DeathResult": null
   },
   {
     "Id": "bee_step3_fail",
@@ -105,7 +110,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 0,
     "ResultType": "Fail",
-    "ResultText": "꿀을 빼앗기고 말았따… 흑흑흑… 저 녀석은 얼굴도 잘생겼으면서 왜 힘도 센거야…. 으허헉…ㅠㅠ"
+    "ResultText": "꿀을 빼앗기고 말았따… 흑흑흑… 저 녀석은 얼굴도 잘생겼으면서 왜 힘도 센거야…. 으허헉…ㅠㅠ",
+    "DeathResult": "오늘도 얄미운 벌끔이한테 당했다…"
   },
   {
     "Id": "gomsuni_step1_hat_success",
@@ -123,7 +129,8 @@
     "Choice2FailNextStepId": "gomsuni_step2_b",
     "Choice2SuccessProbability": 40,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step1_hat_fail",
@@ -141,7 +148,8 @@
     "Choice2FailNextStepId": "gomsuni_step2_b",
     "Choice2SuccessProbability": 30,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step2_a",
@@ -159,7 +167,8 @@
     "Choice2FailNextStepId": "gomsuni_step3_b",
     "Choice2SuccessProbability": 60,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step2_b",
@@ -177,7 +186,8 @@
     "Choice2FailNextStepId": "gomsuni_step3_c",
     "Choice2SuccessProbability": 65,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step3_a",
@@ -195,7 +205,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 50,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step3_b",
@@ -213,7 +224,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 100,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step3_c",
@@ -231,7 +243,8 @@
     "Choice2FailNextStepId": "gomsuni_step4_fail",
     "Choice2SuccessProbability": 40,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step4_b",
@@ -249,7 +262,8 @@
     "Choice2FailNextStepId": "gomsuni_step4_fail",
     "Choice2SuccessProbability": 50,
     "ResultType": null,
-    "ResultText": null
+    "ResultText": null,
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step4_success",
@@ -267,7 +281,8 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 0,
     "ResultType": "Success",
-    "ResultText": "예쁜 곰순씨가 나와 동행하기로 했다! 크윽… 너무 행복해…… 지금 난 이 세상 최고의 곰!!"
+    "ResultText": "예쁜 곰순씨가 나와 동행하기로 했다! 크윽… 너무 행복해…… 지금 난 이 세상 최고의 곰!!",
+    "DeathResult": null
   },
   {
     "Id": "gomsuni_step4_fail",
@@ -285,6 +300,7 @@
     "Choice2FailNextStepId": null,
     "Choice2SuccessProbability": 0,
     "ResultType": "Fail",
-    "ResultText": "곰순씨… 돌아와요오오오오….... 으흐흐흫ㄱ…..."
+    "ResultText": "곰순씨… 돌아와요오오오오…....\\n으흐흐흫ㄱ…...",
+    "DeathResult": "곰순씨는 나를 떠나갔다…"
   }
 ]

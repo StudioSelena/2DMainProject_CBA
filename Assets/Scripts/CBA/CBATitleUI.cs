@@ -14,6 +14,7 @@ public class CBATitleUI : DaniTechUIBase
 
     private void OnEnable()
     {
+        Btn_StartAdventure.SetInteractable(true);
         Btn_StartAdventure.BindOnClickButtonEvent(OnClickStartAdventureButton);
         Btn_Shop.BindOnClickButtonEvent(OnClickShopButton);
         Btn_Inventory.BindOnClickButtonEvent(OnClickInventoryButton);

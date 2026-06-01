@@ -11,7 +11,12 @@ public class CBAGameManager : MonoBehaviour
     private bool _isGomsuniCompanion = false;
     private CBASpecialEventStepData _currentSpecialEventStep;
     private CBAEventData _currentEvent;
+    private bool _isBeeEventSuccess;
+    private string _lastFailResultText = string.Empty;
+    private bool _isSuccessEnding;
 
+    private bool _hasBeeEventOccurred = false;
+    private bool _hasGomsuniEventOccurred = false;
 
     public DaniTechPlayerModel PlayerModel { get { return _playerModel; } }
     public CBAEventData CurrentEvent { get { return _currentEvent; } }
@@ -28,7 +33,6 @@ public class CBAGameManager : MonoBehaviour
         DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Title_PixelOverworldRun", 0.1f);
     }
 
-
     public void StartAdventure()
     {
         _playerModel = new DaniTechPlayerModel();
@@ -37,6 +41,11 @@ public class CBAGameManager : MonoBehaviour
         _currentSpecialEventStep = null;
         _hatEventSuccess = false;
         _isGomsuniCompanion = false;
+        _isBeeEventSuccess = false;
+        _lastFailResultText = string.Empty;
+
+        _hasBeeEventOccurred = false;
+        _hasGomsuniEventOccurred = false;
 
         //모자이벤트는 일반이벤트랜덤풀에서 제외
         _eventPool = new List<CBAEventData>();
@@ -130,6 +139,7 @@ public class CBAGameManager : MonoBehaviour
 
         if (isSuccess == false)
         {
+            _lastFailResultText = _currentEvent.DeathResult;
             ReduceHeart();
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
         }
@@ -147,8 +157,6 @@ public class CBAGameManager : MonoBehaviour
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
         DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
     }
-
-    
 
     private bool JudgeSuccessorFail(int probability)
     {
@@ -204,7 +212,24 @@ public class CBAGameManager : MonoBehaviour
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
             Debug.Log($"[CBA] 엔딩 표시 / CurrentTurn: {_playerModel.CurrentTurn}");
-            DaniTechUIManager.Instance.OpenCBAEndingUI(failEnding.EndingTitle, failEnding.EndingDescription, _playerModel.CurrentTurn);
+            
+            string beeResult = _hasBeeEventOccurred
+                ? (_isBeeEventSuccess ? failEnding.BeeResultSuccess : failEnding.BeeResultFail)
+                : string.Empty;
+            string gomsuniResult = _hasGomsuniEventOccurred
+                ? (_isGomsuniCompanion ? failEnding.GomsuniResultSuccess : failEnding.GomsuniResultFail)
+                : string.Empty;
+
+            DaniTechUIManager.Instance.OpenCBAEndingUI(
+                failEnding.EndingTitle,
+                failEnding.EndingDescription,
+                _playerModel.CurrentTurn,
+                beeResult,
+                gomsuniResult,
+                _lastFailResultText,
+                _isSuccessEnding
+            );
+
             DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Lose_GameOverDrift", 0.1f);
             return;
         }
@@ -229,7 +254,23 @@ public class CBAGameManager : MonoBehaviour
 
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
-            DaniTechUIManager.Instance.OpenCBAEndingUI(successEnding.EndingTitle, successEnding.EndingDescription, _playerModel.CurrentTurn);
+
+            string beeResultSuccess = _hasBeeEventOccurred
+                ? (_isBeeEventSuccess ? successEnding.BeeResultSuccess : successEnding.BeeResultFail)
+                : string.Empty;
+            string gomsuniResultSuccess = _hasGomsuniEventOccurred
+                ? (_isGomsuniCompanion ? successEnding.GomsuniResultSuccess : successEnding.GomsuniResultFail)
+                : string.Empty;
+            DaniTechUIManager.Instance.OpenCBAEndingUI(
+                successEnding.EndingTitle,
+                successEnding.EndingDescription,
+                _playerModel.CurrentTurn,
+                beeResultSuccess,
+                gomsuniResultSuccess,
+                _lastFailResultText,
+                _isSuccessEnding
+            );
+
             DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Win_LevelClearJingle", 0.1f);
             return;
         }
@@ -278,6 +319,7 @@ public class CBAGameManager : MonoBehaviour
 
     private void LoadTrueEnding()
     {
+        _isSuccessEnding = true;
         CBAEndingData trueEnding = null;
         foreach (var ending in DaniTechGameDataManager.Instance.CBAEndingDataList.Values)
         {
@@ -296,7 +338,23 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechUIManager.Instance.CloseCBAAdventureUI();
         DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
-        DaniTechUIManager.Instance.OpenCBAEndingUI(trueEnding.EndingTitle, trueEnding.EndingDescription, _playerModel.CurrentTurn);
+
+        string beeResultSuccess = _hasBeeEventOccurred
+                ? (_isBeeEventSuccess ? trueEnding.BeeResultSuccess : trueEnding.BeeResultFail)
+                : string.Empty;
+        string gomsuniResultSuccess = _hasGomsuniEventOccurred
+            ? (_isGomsuniCompanion ? trueEnding.GomsuniResultSuccess : trueEnding.GomsuniResultFail)
+            : string.Empty;
+        DaniTechUIManager.Instance.OpenCBAEndingUI(
+            trueEnding.EndingTitle,
+            trueEnding.EndingDescription,
+            _playerModel.CurrentTurn,
+            beeResultSuccess,
+            gomsuniResultSuccess,
+            _lastFailResultText,
+            _isSuccessEnding
+        );
+
         DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Win_LevelClearJingle", 0.1f);
     }
 
@@ -308,6 +366,15 @@ public class CBAGameManager : MonoBehaviour
         {
             Debug.LogError($"[CBAGameManager] 특별 이벤트 스텝을 찾을 수 없습니다: {stepId}");
             return;
+        }
+
+        if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Bee)
+        {
+            _hasBeeEventOccurred = true;
+        }
+        else if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+        {
+            _hasGomsuniEventOccurred = true;
         }
 
         DaniTechSoundManager.Inst.PlayBGM(GetSpecialEventBGM(_currentSpecialEventStep.GetSpecialEventType()), 0.1f);
@@ -377,6 +444,8 @@ public class CBAGameManager : MonoBehaviour
             }
             else
             {
+                _isBeeEventSuccess = false;
+                _lastFailResultText = _currentSpecialEventStep.DeathResult;
                 ReduceHeart();
                 DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
                 DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Win);
@@ -387,7 +456,12 @@ public class CBAGameManager : MonoBehaviour
         {
             DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
 
-            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Bee)
+            {
+                _isBeeEventSuccess = true;
+            }
+            
+            else if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
             {
                 _isGomsuniCompanion = true;
                 DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Smile);

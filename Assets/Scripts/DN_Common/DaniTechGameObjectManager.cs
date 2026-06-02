@@ -24,14 +24,14 @@ public class DaniTechGameObjectManager : MonoBehaviour
 
     public void RequestSpawnEnemy()
     {
-        if(Prefab_Enemy == null)
+        if (Prefab_Enemy == null)
         {
             Debug.LogWarning("프리팹이 등록되지 않은 오브젝트 입니다.");
             return;
         }
 
         var gObj = Instantiate(Prefab_Enemy, Root_Enemy);
-        if(gObj == null)
+        if (gObj == null)
         {
             Debug.LogWarning("생성에 실패한 게임 오브젝트 입니다.");
             return;
@@ -58,7 +58,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
     {
         // 4-1 지금은 Enemy지만, 나중에 IGameEntity 같은 인터페이스로 개선하면 더 좋다
         DaniTech_2DEnemy gameEntity = gObj.GetComponent<DaniTech_2DEnemy>();
-        if(gameEntity == null)
+        if (gameEntity == null)
         {
             Debug.LogWarning($"생성된 {gObj.name}의 InstanceId를 대입할 수 있는 컴포넌트를 가져올 수 없습니다!");
             return;
@@ -71,7 +71,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
 
     public GameObject GetEntityObjectCanBeNull(int instanceId)
     {
-        if(_createdGameObjectContainer.ContainsKey(instanceId) == false)
+        if (_createdGameObjectContainer.ContainsKey(instanceId) == false)
         {
             Debug.LogWarning($"{instanceId}는 존재하지 않습니다.");
             return null;
@@ -79,12 +79,12 @@ public class DaniTechGameObjectManager : MonoBehaviour
 
         // 2-1 실체화하면서 등록된 게임 오브젝트가 있다면 반환
         return _createdGameObjectContainer[instanceId];
-    } 
+    }
 
     public void RequestDestroyEntityObject(int instanceId)
     {
         var gObj = GetEntityObjectCanBeNull(instanceId);
-        if(gObj == null)
+        if (gObj == null)
         {
             return;
         }
@@ -118,7 +118,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
         var generatedInstanceId = _objectInstanceKeyGenerator;
         var fieldObject = createdObject.GetComponent<DaniTech_2DFieldObject>();
 
-        if(fieldObject != null)
+        if (fieldObject != null)
         {
             _fieldObjectContainer.Add(generatedInstanceId, fieldObject);
             fieldObject.InitFieldObjectInfoOnCreated(generatedInstanceId, fieldObjectDataId);
@@ -140,7 +140,7 @@ public class DaniTechGameObjectManager : MonoBehaviour
 
     public DaniTech_2DFieldObject GetFieldObjectByInstanceId(int fieldObjectInstanceId)
     {
-        if(_fieldObjectContainer.ContainsKey(fieldObjectInstanceId) == false)
+        if (_fieldObjectContainer.ContainsKey(fieldObjectInstanceId) == false)
         {
             Debug.LogError($"{fieldObjectInstanceId} 찾으려는 필드 오브젝트가 유효하지 않습니다");
             return null;
@@ -171,14 +171,14 @@ public class DaniTechGameObjectManager : MonoBehaviour
         {
             _mapInstance = Instantiate(mapPrefab, new Vector3(0f, 0.3f, 0f), Quaternion.identity);
         }
-        
+
         GameObject skyPrefab = Resources.Load<GameObject>("Prefabs/2D/Sky_Background");
         if (skyPrefab != null)
         {
             _skyInstance = Instantiate(skyPrefab, new Vector3(-0.2f, 3.5f, 0f), Quaternion.identity);
         }
 
-        
+
     }
 
     public void UpdateCBANPCInstance(string npcPrefabPath)
@@ -286,3 +286,4 @@ public class DaniTechGameObjectManager : MonoBehaviour
         return _npcInstance.GetComponent<CBANPCAnimationController>();
     }
 }
+

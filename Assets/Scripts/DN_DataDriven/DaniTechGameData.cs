@@ -151,6 +151,7 @@ public class CBAEndingDataList
 public class CBAEndingLogEntry
 {
     public string ResultText;
+    public string LastFailResultText;
     public int TurnCount;
     public bool IsSuccess;
 }

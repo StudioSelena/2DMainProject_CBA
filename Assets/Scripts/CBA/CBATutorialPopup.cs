@@ -11,7 +11,7 @@ public class CBATutorialPopup : DaniTechUIBase
 
     private void OnEnable()
     {
-        Text_Msg.text = "7턴: 벌끔이 등장\n12턴: 곰순이 등장\n17턴: 엔딩";
+        Text_Msg.text = "엉춤을 찾아 떠나자\r\n7턴 벌끔이 등장\r\n12턴 곰순이 등장\r\n17턴 엔딩\r\n!성공 시 엉춤 해금!";
         Btn_Confirm.BindOnClickButtonEvent(OnClickConfirmButton);
     }
 

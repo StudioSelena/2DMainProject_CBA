@@ -22,7 +22,8 @@ public enum DaniTechUIType
     CBATitleUI,
     CBAAdventureUI,
     CBAEndingUI,
-    CBATutorialPopup
+    CBATutorialPopup,
+    CBAEndingCollectionPopupUI
 }
 
 public static class DaniTechUIManagerExtension
@@ -247,6 +248,16 @@ public static class DaniTechUIManagerExtension
     public static void OpenCBATutorialPopup(this DaniTechUIManager uiManager)
     {
         uiManager.OpenPopupUI(DaniTechUIType.CBATutorialPopup);
+    }
+
+    public static void OpenCBAEndingCollectionPopupUI(this DaniTechUIManager uiManager)
+    {
+        uiManager.OpenPopupUI(DaniTechUIType.CBAEndingCollectionPopupUI);
+    }
+
+    public static void CloseCBAEndingCollectionPopupUI(this DaniTechUIManager uiManager)
+    {
+        uiManager.CloseUI(DaniTechUIRootType.PopupUI, DaniTechUIType.CBAEndingCollectionPopupUI);
     }
 }
 

@@ -44,6 +44,6 @@ public class CBATitleUI : DaniTechUIBase
 
     private void OnClickEndingCollectionButton()
     {
-        // Milestone 3
+        DaniTechUIManager.Instance.OpenCBAEndingCollectionPopupUI();
     }
 }

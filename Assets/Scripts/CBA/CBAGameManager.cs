@@ -36,7 +36,7 @@ public class CBAGameManager : MonoBehaviour
     public void StartAdventure()
     {
         _playerModel = new DaniTechPlayerModel();
-        _playerModel.CurrentHearts = 3;
+        _playerModel.CurrentHearts = 1;
         _playerModel.CurrentTurn = 0;
         _currentSpecialEventStep = null;
         _hatEventSuccess = false;
@@ -230,6 +230,8 @@ public class CBAGameManager : MonoBehaviour
                 ? (_isGomsuniCompanion ? failEnding.GomsuniResultSuccess : failEnding.GomsuniResultFail)
                 : string.Empty;
 
+            SaveEndingLog(failEnding.EndingDescription, _playerModel.CurrentTurn, false);
+
             DaniTechUIManager.Instance.OpenCBAEndingUI(
                 failEnding.EndingTitle,
                 failEnding.EndingDescription,
@@ -286,6 +288,28 @@ public class CBAGameManager : MonoBehaviour
         }
 
         LoadRandomEvent();
+    }
+
+    private void SaveEndingLog(string resultText, int turnCount, bool isSuccess)
+    {
+        CBAEndingLogList LogList = LoadEndingLogList();
+        CBAEndingLogEntry entry  = new CBAEndingLogEntry();
+        entry.ResultText = resultText;
+        entry.TurnCount = turnCount;
+        LogList.Entries.Add( entry );
+        string json = JsonUtility.ToJson(LogList);
+        PlayerPrefs.SetString("CBA_EndingLog", json);
+        PlayerPrefs.Save();
+    }
+
+    private CBAEndingLogList LoadEndingLogList()
+    {
+        string json = PlayerPrefs.GetString("CBA_EndingLog", "");
+        if (string.IsNullOrEmpty(json))
+        {
+            return new CBAEndingLogList();
+        }
+        return JsonUtility.FromJson<CBAEndingLogList>(json);
     }
 
     public void GoToTitle()
@@ -359,6 +383,9 @@ public class CBAGameManager : MonoBehaviour
         string gomsuniResultSuccess = _hasGomsuniEventOccurred
             ? (_isGomsuniCompanion ? trueEnding.GomsuniResultSuccess : trueEnding.GomsuniResultFail)
             : string.Empty;
+
+        SaveEndingLog(trueEnding.EndingDescription, _playerModel.CurrentTurn, true);
+
         DaniTechUIManager.Instance.OpenCBAEndingUI(
             trueEnding.EndingTitle,
             trueEnding.EndingDescription,

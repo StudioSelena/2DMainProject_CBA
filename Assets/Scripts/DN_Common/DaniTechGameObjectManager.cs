@@ -285,5 +285,17 @@ public class DaniTechGameObjectManager : MonoBehaviour
         }
         return _npcInstance.GetComponent<CBANPCAnimationController>();
     }
+
+    public GameObject SpawnCBAEndingSlot(Transform parent)
+    {
+        GameObject slotPrefab = Resources.Load<GameObject>("Prefabs/UI/PopupUI/EndingSlotUI");
+        if (slotPrefab == null)
+        {
+            Debug.LogWarning("[CBA] EndingSlotUI 프리팹을 찾을 수 없습니다.");
+            return null;
+        }
+        return Instantiate(slotPrefab, parent);
+    }
+
 }
 

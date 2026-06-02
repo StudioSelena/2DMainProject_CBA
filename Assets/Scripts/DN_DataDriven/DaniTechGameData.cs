@@ -146,3 +146,17 @@ public class CBAEndingDataList
 {
     public List<CBAEndingData> Endings;
 }
+
+[System.Serializable]
+public class CBAEndingLogEntry
+{
+    public string ResultText;
+    public int TurnCount;
+    public bool IsSuccess;
+}
+
+[System.Serializable]
+public class CBAEndingLogList
+{
+    public List<CBAEndingLogEntry> Entries = new List<CBAEndingLogEntry>();
+}

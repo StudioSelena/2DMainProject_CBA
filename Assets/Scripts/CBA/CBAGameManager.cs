@@ -36,7 +36,7 @@ public class CBAGameManager : MonoBehaviour
     public void StartAdventure()
     {
         _playerModel = new DaniTechPlayerModel();
-        _playerModel.CurrentHearts = 1;
+        _playerModel.CurrentHearts = 3;
         _playerModel.CurrentTurn = 0;
         _currentSpecialEventStep = null;
         _hatEventSuccess = false;

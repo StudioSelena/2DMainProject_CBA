@@ -7,7 +7,7 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
     [SerializeField] private DaniTechUIButton Btn_Close;
     [SerializeField] private Transform Content_EndingLog;
 
-    private void OnEnable()
+    private void  OnEnable()
     {
         Btn_Close.BindOnClickButtonEvent(OnClickCloseButton);
         PopulateEndingLog();
@@ -15,6 +15,9 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
 
     private void PopulateEndingLog()
     {
+        string debugJson = PlayerPrefs.GetString("CBA_EndingLog", "");
+        Debug.Log($"[CBA] EndingLog JSON: {debugJson}");
+
         foreach (Transform child in Content_EndingLog)
         {
             Destroy(child.gameObject);
@@ -34,7 +37,9 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
 
         foreach (CBAEndingLogEntry entry in logList.Entries)
         {
+            Debug.Log($"[CBA] 슬롯 생성 시도: {entry.ResultText}");
             GameObject slotObj = DaniTechGameObjectManager.Inst.SpawnCBAEndingSlot(Content_EndingLog);
+            Debug.Log($"[CBA] 슬롯 생성 결과: {slotObj}");
             CBAEndingCollectionSlotUI slot = slotObj.GetComponent<CBAEndingCollectionSlotUI>();
             slot.SetSlotData(entry.ResultText, entry.TurnCount, entry.IsSuccess);
         }

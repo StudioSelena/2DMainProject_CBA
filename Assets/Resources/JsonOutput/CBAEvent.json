@@ -15,7 +15,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "돌아가다 길을 잃었다.. \\n나 길치다곰…",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "돌뿌리에 걸려 넘어졌다…"
+    "DeathResult": " 돌뿌리에 걸려 넘어졌다…"
   },
   {
     "Id": "event_2",
@@ -33,7 +33,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "참다 못해 결국 먹었다..",
     "Choice2SuccessProbability": 45,
-    "DeathResult": "혈당 스파이크로 잠에 빠졌다…"
+    "DeathResult": " 혈당 스파이크로 잠에 빠졌다…"
   },
   {
     "Id": "event_3",
@@ -51,7 +51,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "나무가 저리 가라며 쫓아냈다… \\n너무해 엉엉",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "나무에게 쫓겨났다…"
+    "DeathResult": " 나무에게 쫓겨났다…"
   },
   {
     "Id": "event_4",
@@ -69,7 +69,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "재채기가 멈추지 않는다...\\n푸엑취!우엑취!!!\\n훌쩍…",
     "Choice2SuccessProbability": 55,
-    "DeathResult": "독버섯을 먹고 쓰러졌다…"
+    "DeathResult": " 독버섯을 먹고 쓰러졌다…"
   },
   {
     "Id": "event_5",
@@ -87,7 +87,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "죄책감에 발이 무겁다…\\n아기새야 미안해…",
     "Choice2SuccessProbability": 75,
-    "DeathResult": "나무에서 떨어져 다쳤다…"
+    "DeathResult": " 나무에서 떨어져 다쳤다…"
   },
   {
     "Id": "event_6",
@@ -105,7 +105,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "빗나가서 발목을 삐었다… 힘만 썼다…",
     "Choice2SuccessProbability": 60,
-    "DeathResult": "돼지머리에게 당했다…"
+    "DeathResult": " 돼지머리에게 당했다…"
   },
   {
     "Id": "event_7",
@@ -123,7 +123,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "-",
     "Choice2SuccessProbability": 100,
-    "DeathResult": "허리를 삐끗해 쓰러졌다…"
+    "DeathResult": " 허리를 삐끗해 쓰러졌다…"
   },
   {
     "Id": "event_8",
@@ -141,7 +141,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "곰이 그런 게 어딨어?! 돌아가서 다시 먹어버렸다. 이거지!",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "독이 오른 감자를 먹었다…"
+    "DeathResult": " 독이 오른 감자를 먹었다…"
   },
   {
     "Id": "event_9",
@@ -159,7 +159,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "발이 빠져서 지쳐버렸다…",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "모래밭에 빠졌다…"
+    "DeathResult": " 모래밭에 빠졌다…"
   },
   {
     "Id": "event_10",
@@ -177,7 +177,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "주인이 몽둥이를 들고 뛰쳐나왔다!!!꺄악!!!!!",
     "Choice2SuccessProbability": 55,
-    "DeathResult": "개한테 쫓겼다…"
+    "DeathResult": " 개한테 쫓겼다…"
   },
   {
     "Id": "event_11",
@@ -195,7 +195,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "-",
     "Choice2SuccessProbability": 100,
-    "DeathResult": "책의 저주에 걸렸다…"
+    "DeathResult": " 책의 저주에 걸렸다…"
   },
   {
     "Id": "event_12",
@@ -213,7 +213,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "남자가 갑자기 뒤에서 덮쳤다. 싸움 끝에 지쳤다… 그냥 사줄걸…",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "수상한 남자한테 당했다…"
+    "DeathResult": " 수상한 남자한테 당했다…"
   },
   {
     "Id": "event_13",
@@ -231,7 +231,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "여우가 왁!! 하고 달려들었다. 우엉 ㅠㅠ",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "여우가 물었다…"
+    "DeathResult": " 여우가 물었다…"
   },
   {
     "Id": "event_14",
@@ -249,7 +249,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "잘 가",
     "Choice2SuccessProbability": 100,
-    "DeathResult": "공룡알에 당했다…"
+    "DeathResult": " 공룡알에 당했다…"
   },
   {
     "Id": "event_15",
@@ -267,7 +267,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "점프하다 독독씨를 짚어버렸다… 앗 따끔해 ㅠ",
     "Choice2SuccessProbability": 55,
-    "DeathResult": "독독씨한테 쏘였다…"
+    "DeathResult": " 독독씨한테 쏘였다…"
   },
   {
     "Id": "event_16",
@@ -285,7 +285,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "털에 불이 붙었다!! 꺄악!!ㅠㅠ",
     "Choice2SuccessProbability": 70,
-    "DeathResult": "불이 붙었다…."
+    "DeathResult": " 불이 붙었다…."
   },
   {
     "Id": "event_17",
@@ -303,7 +303,7 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "헉 너무 무겁다… 체력이 오히려 빠졌다…",
     "Choice2SuccessProbability": 55,
-    "DeathResult": "야구빠따를 집는 게 아니었다… 이놈의 야구…"
+    "DeathResult": " 야구빠따를 집는 게 아니었다… 이놈의 야구…"
   },
   {
     "Id": null,
@@ -591,6 +591,6 @@
     "Choice2HeartsChange": 0,
     "Choice2FailResult": "모자 주인이 달려와서 모자를 받아갔다. 민망하다.",
     "Choice2SuccessProbability": 80,
-    "DeathResult": "모자따위 무시했어야 했다…"
+    "DeathResult": " 모자따위 무시했어야 했다…"
   }
 ]

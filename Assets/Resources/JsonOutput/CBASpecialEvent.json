@@ -111,7 +111,7 @@
     "Choice2SuccessProbability": 0,
     "ResultType": "Fail",
     "ResultText": "꿀을 빼앗기고 말았따… 흑흑흑… 저 녀석은 얼굴도 잘생겼으면서 왜 힘도 센거야…. 으허헉…ㅠㅠ",
-    "DeathResult": "오늘도 얄미운 벌끔이한테 당했다…"
+    "DeathResult": " 오늘도 얄미운 벌끔이한테 당했다…"
   },
   {
     "Id": "gomsuni_step1_hat_success",
@@ -301,6 +301,6 @@
     "Choice2SuccessProbability": 0,
     "ResultType": "Fail",
     "ResultText": "곰순씨… 돌아와요오오오오…....\\n으흐흐흫ㄱ…...",
-    "DeathResult": "곰순씨는 나를 떠나갔다…"
+    "DeathResult": " 곰순씨는 나를 떠나갔다…"
   }
 ]

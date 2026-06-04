@@ -37,11 +37,9 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
 
         foreach (CBAEndingLogEntry entry in logList.Entries)
         {
-            Debug.Log($"[CBA] 슬롯 생성 시도: {entry.ResultText}");
             GameObject slotObj = DaniTechGameObjectManager.Inst.SpawnCBAEndingSlot(Content_EndingLog);
-            Debug.Log($"[CBA] 슬롯 생성 결과: {slotObj}");
             CBAEndingCollectionSlotUI slot = slotObj.GetComponent<CBAEndingCollectionSlotUI>();
-            slot.SetSlotData(entry.ResultText, entry.LastFailResultText, entry.TurnCount, entry.IsSuccess);
+            slot.SetSlotData(entry.ResultText, entry.TurnCount, entry.IsSuccess);
         }
     }
 

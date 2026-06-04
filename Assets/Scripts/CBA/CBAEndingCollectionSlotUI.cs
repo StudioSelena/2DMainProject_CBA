@@ -8,14 +8,9 @@ public class CBAEndingCollectionSlotUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_TurnCount;
     [SerializeField] private TextMeshProUGUI Text_IsSuccess;
 
-    public void SetSlotData(string resultText, string lastFailResultText, int turnCount, bool isSuccess)
+    public void SetSlotData(string resultText, int turnCount, bool isSuccess)
     {
-        string displayText = resultText;
-        if (string.IsNullOrEmpty(lastFailResultText) == false)
-        {
-            displayText += lastFailResultText;
-        }
-        Text_ResultText.text = displayText;
+        Text_ResultText.text = resultText;
         Text_TurnCount.text = "생존 턴 수 " + (turnCount - 1) + " / 16";
         Text_IsSuccess.text = isSuccess ? "<모험 성공>" : "<모험 실패>";
     }

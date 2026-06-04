@@ -29,7 +29,7 @@ public class CBAEndingUI : DaniTechUIBase
         }
         else
         {
-            string causeText = beeResult + " " + gomsuniResult + " " + lastFailResult;
+            string causeText = beeResult + gomsuniResult + lastFailResult;
             Text_EndingDescription.text = description + "\n" + causeText;
         }
 

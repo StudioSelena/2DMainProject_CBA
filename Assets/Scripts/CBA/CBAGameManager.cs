@@ -231,7 +231,8 @@ public class CBAGameManager : MonoBehaviour
                 ? (_isGomsuniCompanion ? failEnding.GomsuniResultSuccess : failEnding.GomsuniResultFail)
                 : string.Empty;
 
-            SaveEndingLog(failEnding.EndingDescription, _lastFailResultText, _playerModel.CurrentTurn, false);
+            string failDisplayText = failEnding.EndingDescription + "\n" + beeResult + " " + gomsuniResult + " " + _lastFailResultText;
+            SaveEndingLog(failDisplayText, _playerModel.CurrentTurn, false);
 
             DaniTechUIManager.Instance.OpenCBAEndingUI(
                 failEnding.EndingTitle,
@@ -291,12 +292,11 @@ public class CBAGameManager : MonoBehaviour
         LoadRandomEvent();
     }
 
-    private void SaveEndingLog(string resultText, string lastFailResultText, int turnCount, bool isSuccess)
+    private void SaveEndingLog(string displayText, int turnCount, bool isSuccess)
     {
         CBAEndingLogList LogList = LoadEndingLogList();
         CBAEndingLogEntry entry = new CBAEndingLogEntry();
-        entry.ResultText = resultText;
-        entry.LastFailResultText = lastFailResultText;
+        entry.ResultText = displayText;
         entry.TurnCount = turnCount;
         entry.IsSuccess = isSuccess;
         LogList.Entries.Add(entry);
@@ -387,7 +387,8 @@ public class CBAGameManager : MonoBehaviour
             ? (_isGomsuniCompanion ? trueEnding.GomsuniResultSuccess : trueEnding.GomsuniResultFail)
             : string.Empty;
 
-        SaveEndingLog(trueEnding.EndingDescription, string.Empty, _playerModel.CurrentTurn, true);
+        string trueDisplayText = trueEnding.EndingDescription;
+        SaveEndingLog(trueDisplayText, _playerModel.CurrentTurn, true);
 
         DaniTechUIManager.Instance.OpenCBAEndingUI(
             trueEnding.EndingTitle,

@@ -448,7 +448,10 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
 
+        string bearDialogue = _currentSpecialEventStep.BearDialogue;
+        string npcDialogue = _currentSpecialEventStep.NPCDialogue;
         string resultText = resultType == SpecialEventResultType.Success ? "성공!" : "실패!";
+
         _currentSpecialEventStep = null;
 
         if (_isGomsuniCompanion)
@@ -460,9 +463,7 @@ public class CBAGameManager : MonoBehaviour
             DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
         }
 
-        DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(string.Empty, string.Empty, string.Empty, string.Empty);
-
-        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText, bearDialogue, npcDialogue);
     }
 
     private void LoadSpecialEvent(string stepId)
@@ -565,6 +566,16 @@ public class CBAGameManager : MonoBehaviour
             return;
         }
 
+        if (resultType == SpecialEventResultType.None)
+        {
+            string bearDialogue = _currentSpecialEventStep.BearDialogue;
+            string npcDialogue = _currentSpecialEventStep.NPCDialogue;
+            string noneResultText = _currentSpecialEventStep.ResultText;
+            _currentSpecialEventStep = null;
+            DaniTechUIManager.Instance.ShowCBAAdventureResult(noneResultText, bearDialogue, npcDialogue);
+            return;
+        }
+
         if (resultType == SpecialEventResultType.Fail)
         {
             if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
@@ -599,6 +610,8 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
 
+        string bear = _currentSpecialEventStep.BearDialogue;
+        string npc = _currentSpecialEventStep.NPCDialogue;
         string resultText;
         if (resultType == SpecialEventResultType.Success)
         {
@@ -623,6 +636,6 @@ public class CBAGameManager : MonoBehaviour
             DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
         }
 
-        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText, bear, npc);
     }
 }

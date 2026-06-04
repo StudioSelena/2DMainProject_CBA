@@ -76,9 +76,11 @@ public class CBAAdventureUI : DaniTechUIBase
     }
 
     // 결과 텍스트 표시 — 말풍선 숨기고 일반 텍스트 영역에 결과 표시
-    public void ShowResultText(string resultText)
+    public void ShowResultText(string resultText, string bearDialogue = "", string npcDialogue = "")
     {
-        SetDialoguePanelsActive(false, string.Empty, false, string.Empty);
+        bool showBear = string.IsNullOrEmpty(bearDialogue) == false;
+        bool showNPC = string.IsNullOrEmpty(npcDialogue) == false;
+        SetDialoguePanelsActive(showBear, bearDialogue, showNPC, npcDialogue);
         Text_EventTitle.text = "결과";
         Text_EventDescription.text = resultText;
         SetChoiceButtonsInteractable(false);

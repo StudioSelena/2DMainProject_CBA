@@ -413,6 +413,58 @@ public class CBAGameManager : MonoBehaviour
         DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Win_LevelClearJingle", 0.1f);
     }
 
+    private void ProcessSpecialEventFinalStep()
+    {
+        SpecialEventResultType resultType = _currentSpecialEventStep.GetResultType();
+
+        if (resultType == SpecialEventResultType.Fail)
+        {
+            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+            {
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Nope);
+            }
+            else
+            {
+                _isBeeEventSuccess = false;
+                _lastFailResultText = _currentSpecialEventStep.DeathResult;
+                ReduceHeart();
+                DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Win);
+            }
+        }
+        else if (resultType == SpecialEventResultType.Success)
+        {
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Jump);
+            if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Bee)
+            {
+                _isBeeEventSuccess = true;
+            }
+            else if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
+            {
+                _isGomsuniCompanion = true;
+                DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Smile);
+            }
+        }
+
+        DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
+
+        string resultText = resultType == SpecialEventResultType.Success ? "성공!" : "실패!";
+        _currentSpecialEventStep = null;
+
+        if (_isGomsuniCompanion)
+        {
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Gomsuni_Adv_SailorBearParade_1", 0.1f);
+        }
+        else
+        {
+            DaniTechSoundManager.Inst.PlayBGM("Sounds/BGM_Adv_BearSwanWaltz_5", 0.1f);
+        }
+
+        DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(string.Empty, string.Empty, string.Empty, string.Empty);
+
+        DaniTechUIManager.Instance.ShowCBAAdventureResult(resultText);
+    }
+
     private void LoadSpecialEvent(string stepId)
     {
         _currentSpecialEventStep = DaniTechGameDataManager.Instance.GetCBASpecialEventStepData(stepId);
@@ -430,6 +482,17 @@ public class CBAGameManager : MonoBehaviour
         else if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
         {
             _hasGomsuniEventOccurred = true;
+        }
+
+        // 추가: 결과 스텝이면 선택지 없이 바로 결과 처리
+        SpecialEventResultType resultType = _currentSpecialEventStep.GetResultType();
+        if (resultType == SpecialEventResultType.Success || resultType == SpecialEventResultType.Fail)
+        {
+            DaniTechSoundManager.Inst.PlayBGM(GetSpecialEventBGM(_currentSpecialEventStep.GetSpecialEventType()), 0.1f);
+            DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
+            DaniTechUIManager.Instance.UpdateCBANPC(GetSpecialEventNPCPath(_currentSpecialEventStep.GetSpecialEventType()));
+            ProcessSpecialEventFinalStep();
+            return;
         }
 
         DaniTechSoundManager.Inst.PlayBGM(GetSpecialEventBGM(_currentSpecialEventStep.GetSpecialEventType()), 0.1f);
@@ -536,7 +599,19 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechSoundManager.Inst.PlaySFX("Sounds/SFX_Select_2", 0.1f);
 
-        string resultText = _currentSpecialEventStep.ResultText;
+        string resultText;
+        if (resultType == SpecialEventResultType.Success)
+        {
+            resultText = "성공!";
+        }
+        else if (resultType == SpecialEventResultType.Fail)
+        {
+            resultText = "실패!";
+        }
+        else
+        {
+            resultText = _currentSpecialEventStep.ResultText;
+        }
         _currentSpecialEventStep = null;
 
         if (_isGomsuniCompanion)

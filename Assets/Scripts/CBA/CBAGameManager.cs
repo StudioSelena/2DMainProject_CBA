@@ -35,6 +35,7 @@ public class CBAGameManager : MonoBehaviour
 
     public void StartAdventure()
     {
+        DaniTechUIManager.Instance.CloseCBAEndingCollectionPopupUI();
         _playerModel = new DaniTechPlayerModel();
         _playerModel.CurrentHearts = 3;
         _playerModel.CurrentTurn = 0;

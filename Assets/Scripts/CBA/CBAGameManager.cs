@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CBAGameManager : MonoBehaviour
@@ -231,7 +232,16 @@ public class CBAGameManager : MonoBehaviour
                 ? (_isGomsuniCompanion ? failEnding.GomsuniResultSuccess : failEnding.GomsuniResultFail)
                 : string.Empty;
 
-            string failDisplayText = failEnding.EndingDescription + "\n" + beeResult + " " + gomsuniResult + " " + _lastFailResultText;
+            string causeText = beeResult;
+            if (string.IsNullOrEmpty(gomsuniResult) == false)
+            {
+                causeText += (string.IsNullOrEmpty(causeText) ? "" : " ") + gomsuniResult;
+            }
+            if (string.IsNullOrEmpty(_lastFailResultText) == false)
+            {
+                causeText += (string.IsNullOrEmpty(causeText) ? "" : " ") + _lastFailResultText;
+            }
+            string failDisplayText = failEnding.EndingDescription + "\n" + causeText;
             SaveEndingLog(failDisplayText, _playerModel.CurrentTurn, false);
 
             DaniTechUIManager.Instance.OpenCBAEndingUI(

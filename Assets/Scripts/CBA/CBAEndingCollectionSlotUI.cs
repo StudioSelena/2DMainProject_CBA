@@ -10,7 +10,7 @@ public class CBAEndingCollectionSlotUI : MonoBehaviour
 
     public void SetSlotData(string resultText, int turnCount, bool isSuccess)
     {
-        Text_ResultText.text = resultText;
+        Text_ResultText.text = resultText.TrimEnd();
         Text_TurnCount.text = "생존 턴 수 " + (turnCount - 1) + " / 16";
         Text_IsSuccess.text = isSuccess ? "<모험 성공>" : "<모험 실패>";
     }

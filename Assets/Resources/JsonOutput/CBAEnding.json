@@ -12,7 +12,7 @@
   {
     "Id": "ending_fail",
     "EndingTitle": "모험 실패...",
-    "EndingDescription": "엉뚱곰은 집으로 돌아갔다...\\n",
+    "EndingDescription": "엉뚱곰은 집으로 돌아갔다…",
     "IsSuccessEnding": false,
     "BeeResultSuccess": "벌끔이는 물리쳤지만..",
     "BeeResultFail": "벌끔이에게 꿀을 빼앗겼고..",

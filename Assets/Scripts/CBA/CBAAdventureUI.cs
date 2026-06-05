@@ -30,6 +30,10 @@ public class CBAAdventureUI : DaniTechUIBase
     [Header("상태 UI 턴")]
     [SerializeField] private TextMeshProUGUI Text_Turn;
 
+    [Header("추가 체력")]
+    [SerializeField] private GameObject BonusHeart1;
+    [SerializeField] private GameObject BonusHeart2;
+    [SerializeField] private GameObject BonusHeart3;
 
     private void OnEnable()
     {
@@ -144,6 +148,19 @@ public class CBAAdventureUI : DaniTechUIBase
 
     public void UpdateTurnUI(int currentTurn)
     {
-        Text_Turn.text = $"{currentTurn} / 17턴";
+        Text_Turn.text = $"{currentTurn} / 16턴";
     }
+
+    public void UpdateBonusHeartUI(int bonusHearts)
+    {
+        BonusHeart3.SetActive(false);
+        BonusHeart2.SetActive(false);
+        BonusHeart1.SetActive(false);
+
+        if (bonusHearts >= 1) BonusHeart1.SetActive(true);
+        if (bonusHearts >= 2) BonusHeart2.SetActive(true);
+        if (bonusHearts >= 3) BonusHeart3.SetActive(true);
+    }
+
+
 }

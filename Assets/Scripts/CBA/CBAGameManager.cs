@@ -15,6 +15,7 @@ public class CBAGameManager : MonoBehaviour
     private bool _isBeeEventSuccess;
     private string _lastFailResultText = string.Empty;
     private bool _isSuccessEnding;
+    private int _bonusHearts = 0;
 
     private bool _hasBeeEventOccurred = false;
     private bool _hasGomsuniEventOccurred = false;
@@ -45,6 +46,8 @@ public class CBAGameManager : MonoBehaviour
         _isGomsuniCompanion = false;
         _isBeeEventSuccess = false;
         _lastFailResultText = string.Empty;
+        _bonusHearts = 0;
+        DaniTechUIManager.Instance.UpdateCBABonusHeartUI(_bonusHearts);
 
         _hasBeeEventOccurred = false;
         _hasGomsuniEventOccurred = false;
@@ -178,26 +181,41 @@ public class CBAGameManager : MonoBehaviour
 
     private void ReduceHeart()
     {
-        _playerModel.CurrentHearts -= 1;
-
-        if (_playerModel.CurrentHearts < 0)
+        if (_bonusHearts > 0)
         {
-            _playerModel.CurrentHearts = 0;
+            _bonusHearts -= 1;
+            DaniTechUIManager.Instance.UpdateCBABonusHeartUI(_bonusHearts);
         }
+        else
+        {
+            _playerModel.CurrentHearts -= 1;
+            if (_playerModel.CurrentHearts < 0)
+            {
+                _playerModel.CurrentHearts = 0;
+            }
+            DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
 
-        DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
+        }
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
     private void RecoverHeart(int amount)
     {
-        _playerModel.CurrentHearts += amount;
-
-        if(_playerModel.CurrentHearts > 3)
+        int total = _playerModel.CurrentHearts + amount;
+        if (total <= 3)
         {
-            _playerModel.CurrentHearts = 3;
+            _playerModel.CurrentHearts = total;
         }
-
+        else
+        {
+            _bonusHearts += total - 3;
+            if (_bonusHearts > 3)
+            {
+                _bonusHearts = 3;
+            }
+            _playerModel.CurrentHearts = 3;
+            DaniTechUIManager.Instance.UpdateCBABonusHeartUI(_bonusHearts);
+        }
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
@@ -421,6 +439,7 @@ public class CBAGameManager : MonoBehaviour
         {
             if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
             {
+                DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
                 DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Nope);
             }
             else
@@ -450,7 +469,9 @@ public class CBAGameManager : MonoBehaviour
 
         string bearDialogue = _currentSpecialEventStep.BearDialogue;
         string npcDialogue = _currentSpecialEventStep.NPCDialogue;
-        string resultText = resultType == SpecialEventResultType.Success ? "성공!" : "실패!";
+        string resultText = string.IsNullOrEmpty(_currentSpecialEventStep.ResultText) == false
+            ? _currentSpecialEventStep.ResultText
+            : (resultType == SpecialEventResultType.Success ? "성공!" : "실패!");
 
         _currentSpecialEventStep = null;
 
@@ -500,9 +521,7 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.OpenCBAAdventureUIForSpecialEvent(_currentSpecialEventStep.BearDialogue, _currentSpecialEventStep.NPCDialogue, _currentSpecialEventStep.Choice1Text, _currentSpecialEventStep.Choice2Text);
         DaniTechUIManager.Instance.UpdateCBABackground(_currentSpecialEventStep.BackgroundImageKey);
         DaniTechUIManager.Instance.UpdateCBANPC(GetSpecialEventNPCPath(_currentSpecialEventStep.GetSpecialEventType()));
-
         DaniTechUIManager.Instance.PlayCBABearAnimation(GetDefaultBearAnimState());
-
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 
@@ -580,6 +599,7 @@ public class CBAGameManager : MonoBehaviour
         {
             if (_currentSpecialEventStep.GetSpecialEventType() == SpecialEventType.Gomsuni)
             {
+                DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
                 DaniTechUIManager.Instance.PlayCBANPCAnimation(NPCAnimState.Nope);
             }
             else

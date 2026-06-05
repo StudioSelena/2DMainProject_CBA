@@ -20,6 +20,7 @@ public class CBABearAnimatorController : MonoBehaviour
 
     public void SetState(BearAnimState newState)
     {
+        Debug.Log($"[Bear] SetState 호출 / newState: {newState} / currentState: {_currentAnimState}");
         if (newState == BearAnimState.Walk && _currentAnimState == BearAnimState.Walk)
         {
             return;

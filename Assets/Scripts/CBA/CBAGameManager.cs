@@ -19,6 +19,7 @@ public class CBAGameManager : MonoBehaviour
 
     private bool _hasBeeEventOccurred = false;
     private bool _hasGomsuniEventOccurred = false;
+    private bool _isMagicSpringScene = false;
 
     public DaniTechPlayerModel PlayerModel { get { return _playerModel; } }
     public CBAEventData CurrentEvent { get { return _currentEvent; } }
@@ -47,6 +48,7 @@ public class CBAGameManager : MonoBehaviour
         _isBeeEventSuccess = false;
         _lastFailResultText = string.Empty;
         _bonusHearts = 0;
+        _isMagicSpringScene = false;
         DaniTechUIManager.Instance.UpdateCBABonusHeartUI(_bonusHearts);
 
         _hasBeeEventOccurred = false;
@@ -66,15 +68,6 @@ public class CBAGameManager : MonoBehaviour
         DaniTechUIManager.Instance.CloseCBATitleUI();
         DaniTechGameObjectManager.Inst.SpawnCBAWorldObjects();
         LoadRandomEvent();
-
-        if (PlayerPrefs.GetInt("CBA_DanceUnlocked", 0) == 1)
-        {
-            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.DanceBack);
-        }
-        else
-        {
-            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
-        }
 
         DaniTechUIManager.Instance.UpdateCBAHeartUI(_playerModel.CurrentHearts);
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
@@ -109,7 +102,7 @@ public class CBAGameManager : MonoBehaviour
         }
         if (_playerModel.CurrentTurn == 17)
         {
-            LoadTrueEnding();
+            LoadMagicSpringScene();
             return;
         }
 
@@ -362,6 +355,12 @@ public class CBAGameManager : MonoBehaviour
 
     public void OnClickNext()
     {
+        if (_isMagicSpringScene)
+        {
+            _isMagicSpringScene = false;
+            LoadTrueEnding();
+            return;
+        }
         CheckEnding();
     }
 
@@ -381,6 +380,16 @@ public class CBAGameManager : MonoBehaviour
 
         DaniTechUIManager.Instance.PlayCBABearAnimation(GetDefaultBearAnimState());
 
+        DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
+    }
+
+    private void LoadMagicSpringScene()
+    {
+        _isMagicSpringScene = true;
+        DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.DanceFront);
+        DaniTechUIManager.Instance.UpdateCBABackground("BG_Meadow");
+        DaniTechUIManager.Instance.UpdateCBANPC("Prefabs/2D/NPC_CBA/NPC_MagicSpring");
+        DaniTechUIManager.Instance.ShowCBAAdventureResult("마법의 샘에 도달했다!\n궁극의 엉덩이 춤이 해금되었다!");
         DaniTechUIManager.Instance.UpdateCBATurnUI(_playerModel.CurrentTurn);
     }
 

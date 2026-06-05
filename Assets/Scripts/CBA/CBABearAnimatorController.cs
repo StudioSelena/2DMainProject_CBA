@@ -9,6 +9,7 @@ public enum BearAnimState
     Dead,
     Idle,
     DanceBack,
+    DanceFront,
     Atk
 }
 
@@ -47,6 +48,9 @@ public class CBABearAnimatorController : MonoBehaviour
             case BearAnimState.DanceBack:
                 Animator_Bear.SetBool("IsDanceBack", true);
                 break;
+            case BearAnimState.DanceFront:
+                Animator_Bear.SetBool("IsDanceFront", true);
+                break;
             default:
                 break;
         }
@@ -58,5 +62,6 @@ public class CBABearAnimatorController : MonoBehaviour
         Animator_Bear.SetBool("IsIdle", false);
         Animator_Bear.SetBool("IsDead", false);
         Animator_Bear.SetBool("IsDanceBack", false);
+        Animator_Bear.SetBool("IsDanceFront", false);
     }
 }

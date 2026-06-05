@@ -39,47 +39,33 @@ public class CBAAdventureUI : DaniTechUIBase
     {
         Btn_Choice1.BindOnClickButtonEvent(OnClickChoice1Button);
         Btn_Choice2.BindOnClickButtonEvent(OnClickChoice2Button);
-        Btn_Choice1.gameObject.SetActive(true);    
-        Btn_Choice2.gameObject.SetActive(true);    
         Btn_Next.gameObject.SetActive(false);
     }
 
-    // 일반 이벤트 UI 세팅
     public void SetEventUI(string title, string description, string choice1, string choice2)
     {
         Btn_Next.gameObject.SetActive(false);
-
         Text_EventTitle.text = title;
         Text_EventDescription.text = description;
         Text_Choice1.text = choice1;
         Text_Choice2.text = choice2;
-        Btn_Choice1.gameObject.SetActive(true);
-        Btn_Choice2.gameObject.SetActive(true);
         SetChoiceButtonsInteractable(true);
         SetDialoguePanelsActive(false, string.Empty, false, string.Empty);
-        
     }
 
-    // 특별 이벤트 UI 세팅 — 말풍선 패널 표시, 일반 텍스트 비움
     public void SetSpecialEventUI(string bearDialogue, string npcDialogue, string choice1, string choice2)
     {
         Btn_Next.gameObject.SetActive(false);
-
         Text_EventTitle.text = string.Empty;
         Text_EventDescription.text = string.Empty;
         Text_Choice1.text = choice1;
         Text_Choice2.text = choice2;
-        Btn_Choice1.gameObject.SetActive(true);
-        Btn_Choice2.gameObject.SetActive(true);
         SetChoiceButtonsInteractable(true);
-
         bool showBear = string.IsNullOrEmpty(bearDialogue) == false;
         bool showNPC = string.IsNullOrEmpty(npcDialogue) == false;
         SetDialoguePanelsActive(showBear, bearDialogue, showNPC, npcDialogue);
-        
     }
 
-    // 결과 텍스트 표시 — 말풍선 숨기고 일반 텍스트 영역에 결과 표시
     public void ShowResultText(string resultText, string bearDialogue = "", string npcDialogue = "")
     {
         bool showBear = string.IsNullOrEmpty(bearDialogue) == false;
@@ -97,7 +83,6 @@ public class CBAAdventureUI : DaniTechUIBase
     {
         Panel_BearDialogue.SetActive(showBear);
         Panel_NPCDialogue.SetActive(showNPC);
-
         if (showBear)
         {
             Text_BearDialogue.text = bearText;
@@ -136,6 +121,7 @@ public class CBAAdventureUI : DaniTechUIBase
 
     private void OnClickNextButton()
     {
+        Debug.Log("[CBA] OnClickNextButton 호출");
         CBAGameManager.Instance.OnClickNext();
     }
 
@@ -156,11 +142,8 @@ public class CBAAdventureUI : DaniTechUIBase
         BonusHeart3.SetActive(false);
         BonusHeart2.SetActive(false);
         BonusHeart1.SetActive(false);
-
         if (bonusHearts >= 1) BonusHeart1.SetActive(true);
         if (bonusHearts >= 2) BonusHeart2.SetActive(true);
         if (bonusHearts >= 3) BonusHeart3.SetActive(true);
     }
-
-
 }

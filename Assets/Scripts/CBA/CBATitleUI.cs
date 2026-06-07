@@ -1,5 +1,4 @@
 ﻿// TitleUI의 버튼 바인딩을 담당하는 UI 컴포넌트
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +11,7 @@ public class CBATitleUI : DaniTechUIBase
     [SerializeField] private DaniTechUIButton Btn_ResetGame;
     [SerializeField] private DaniTechUIButton Btn_ResetConfirm;
     [SerializeField] private DaniTechUIButton Btn_ResetCancel;
-    [SerializeField] private GameObject Image_ResetConfirmPopup;
+    [SerializeField] private CanvasGroup CG_ResetConfirmPopup;
 
     private const string TUTORIAL_SEEN_KEY = "CBA_TutorialSeen";
 
@@ -26,7 +25,21 @@ public class CBATitleUI : DaniTechUIBase
         Btn_ResetGame.BindOnClickButtonEvent(OnClickResetGameButton);
         Btn_ResetConfirm.BindOnClickButtonEvent(OnClickResetConfirmButton);
         Btn_ResetCancel.BindOnClickButtonEvent(OnClickResetCancelButton);
-        Image_ResetConfirmPopup.SetActive(false);
+        HideResetConfirmPopup();
+    }
+
+    private void ShowResetConfirmPopup()
+    {
+        CG_ResetConfirmPopup.alpha = 1f;
+        CG_ResetConfirmPopup.interactable = true;
+        CG_ResetConfirmPopup.blocksRaycasts = true;
+    }
+
+    private void HideResetConfirmPopup()
+    {
+        CG_ResetConfirmPopup.alpha = 0f;
+        CG_ResetConfirmPopup.interactable = false;
+        CG_ResetConfirmPopup.blocksRaycasts = false;
     }
 
     private void OnClickStartAdventureButton()
@@ -58,18 +71,18 @@ public class CBATitleUI : DaniTechUIBase
 
     private void OnClickResetGameButton()
     {
-        Image_ResetConfirmPopup.SetActive(true);
+        ShowResetConfirmPopup();
     }
 
     private void OnClickResetConfirmButton()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        Image_ResetConfirmPopup.SetActive(false);
+        HideResetConfirmPopup();
     }
 
     private void OnClickResetCancelButton()
     {
-        Image_ResetConfirmPopup.SetActive(false);
+        HideResetConfirmPopup();
     }
 }

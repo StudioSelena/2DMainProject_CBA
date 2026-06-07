@@ -912,7 +912,7 @@ MonoBehaviour:
   Btn_ResetGame: {fileID: 7152479887138500115}
   Btn_ResetConfirm: {fileID: 717028934253204307}
   Btn_ResetCancel: {fileID: 2253830911434281044}
-  Image_ResetConfirmPopup: {fileID: 9173680628694228251}
+  CG_ResetConfirmPopup: {fileID: 653506400516642359}
 --- !u!222 &8750506059235808416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1328,7 +1328,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3872701692305939894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3435,7 +3435,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8929794441818820989}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3556,6 +3556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3280141404295717109}
+  - component: {fileID: 653506400516642359}
   - component: {fileID: 8393604722477470679}
   - component: {fileID: 1906601348571193120}
   m_Layer: 5
@@ -3564,7 +3565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3280141404295717109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3589,6 +3590,18 @@ RectTransform:
   m_AnchoredPosition: {x: 13.374, y: -39.70772}
   m_SizeDelta: {x: 894.2528, y: 408.0051}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &653506400516642359
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173680628694228251}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!222 &8393604722477470679
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -15,9 +15,6 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
 
     private void PopulateEndingLog()
     {
-        string debugJson = PlayerPrefs.GetString("CBA_EndingLog", "");
-        Debug.Log($"[CBA] EndingLog JSON: {debugJson}");
-
         foreach (Transform child in Content_EndingLog)
         {
             Destroy(child.gameObject);
@@ -35,8 +32,9 @@ public class CBAEndingCollectionPopupUI : DaniTechUIBase
             return;
         }
 
-        foreach (CBAEndingLogEntry entry in logList.Entries)
+        for (int i = logList.Entries.Count - 1; i >= 0; i--)
         {
+            CBAEndingLogEntry entry = logList.Entries[i];
             GameObject slotObj = DaniTechGameObjectManager.Inst.SpawnCBAEndingSlot(Content_EndingLog);
             CBAEndingCollectionSlotUI slot = slotObj.GetComponent<CBAEndingCollectionSlotUI>();
             slot.SetSlotData(entry.ResultText, entry.TurnCount, entry.IsSuccess);

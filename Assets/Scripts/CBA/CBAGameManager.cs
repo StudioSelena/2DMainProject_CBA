@@ -105,8 +105,6 @@ public class CBAGameManager : MonoBehaviour
             return;
         }
 
-        Debug.Log($"[CBA] LoadRandomEvent 호출 / 턴: {_playerModel.CurrentTurn} / 풀 남은 수: {_eventPool.Count}");
-
         int randomIndex = Random.Range(0, _eventPool.Count);
         _currentEvent = _eventPool[randomIndex];
         _eventPool.RemoveAt(randomIndex);

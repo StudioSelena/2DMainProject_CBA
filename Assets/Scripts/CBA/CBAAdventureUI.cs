@@ -121,7 +121,6 @@ public class CBAAdventureUI : DaniTechUIBase
 
     private void OnClickNextButton()
     {
-        Debug.Log("[CBA] OnClickNextButton 호출");
         CBAGameManager.Instance.OnClickNext();
     }
 

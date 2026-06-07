@@ -232,9 +232,8 @@ public class CBAGameManager : MonoBehaviour
             }
 
             DaniTechUIManager.Instance.CloseCBAAdventureUI();
-            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Walk);
-            Debug.Log($"[CBA] 엔딩 표시 / CurrentTurn: {_playerModel.CurrentTurn}");
-            
+            DaniTechUIManager.Instance.PlayCBABearAnimation(BearAnimState.Dead);
+
             string beeResult = _hasBeeEventOccurred
                 ? (_isBeeEventSuccess ? failEnding.BeeResultSuccess : failEnding.BeeResultFail)
                 : string.Empty;

@@ -47,6 +47,7 @@ public class CBAGameManager : MonoBehaviour
         _isBeeEventSuccess = false;
         _lastFailResultText = string.Empty;
         _bonusHearts = 0;
+        _isSuccessEnding = false;
         _isMagicSpringScene = false;
         DaniTechUIManager.Instance.UpdateCBABonusHeartUI(_bonusHearts);
 

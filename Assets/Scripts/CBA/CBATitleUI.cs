@@ -9,6 +9,7 @@ public class CBATitleUI : DaniTechUIBase
     [SerializeField] private DaniTechUIButton Btn_Shop;
     [SerializeField] private DaniTechUIButton Btn_Inventory;
     [SerializeField] private DaniTechUIButton Btn_EndingCollection;
+    [SerializeField] private DaniTechUIButton Btn_ResetGame;
 
     private const string TUTORIAL_SEEN_KEY = "CBA_TutorialSeen";
 
@@ -19,6 +20,7 @@ public class CBATitleUI : DaniTechUIBase
         Btn_Shop.BindOnClickButtonEvent(OnClickShopButton);
         Btn_Inventory.BindOnClickButtonEvent(OnClickInventoryButton);
         Btn_EndingCollection.BindOnClickButtonEvent(OnClickEndingCollectionButton);
+        Btn_ResetGame.BindOnClickButtonEvent(OnClickResetGameButton);
     }
 
     private void OnClickStartAdventureButton()
@@ -32,6 +34,7 @@ public class CBATitleUI : DaniTechUIBase
         Btn_StartAdventure.SetInteractable(false);
         DaniTechUIManager.Instance.OpenCBATutorialPopup();
     }
+
     private void OnClickShopButton()
     {
         // Milestone 3
@@ -45,5 +48,11 @@ public class CBATitleUI : DaniTechUIBase
     private void OnClickEndingCollectionButton()
     {
         DaniTechUIManager.Instance.OpenCBAEndingCollectionPopupUI();
+    }
+
+    private void OnClickResetGameButton()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 }
